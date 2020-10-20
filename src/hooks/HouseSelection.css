@@ -1,0 +1,14 @@
+.houseBackground {
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.houseDiv {
+  width: 50%;
+  height: 50%;
+  float: left;
+}
