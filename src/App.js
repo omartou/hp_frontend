@@ -7,11 +7,14 @@ import {
   Switch
 } from "react-router-dom";
 import { GlobalStyles } from "./components/GlobalStyle";
+import { CharacterProvider } from './components/CharacterContext';
+import CharacterList from './components/CharacterList';
 import HouseSelection from "./hooks/HouseSelection";
 
 const App = (props) => {
   return (
     <Router>
+      <CharacterProvider>
       <div className="App">
         <GlobalStyles />
           <Route path="/hogwarts/houses">
@@ -21,6 +24,7 @@ const App = (props) => {
               <h1>Harry Potter</h1>
           </Route>
       </div>
+      </CharacterProvider>
     </Router>
   );
 };
