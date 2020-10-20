@@ -1,0 +1,38 @@
+.homePageContainer {
+  height: 100vh;
+  width: 100vw;
+}
+
+.hogwarts {
+  position: absolute;
+  left: 3vw;
+  top: 23vh;
+  height: 35vh;
+  width: 35vw;
+  background-size: 35vw 35vh;
+  background-repeat: no-repeat;
+  filter: sepia(100%);
+  transition: 2000ms;
+}
+
+.ministry {
+  position: absolute;
+  left: 55vw;
+  top: 46vh;
+  height: 35vh;
+  width: 35vw;
+  background-size: 35vw 35vh;
+  background-repeat: no-repeat;
+  filter: sepia(100%);
+  transition: 2000ms;
+}
+
+.hogwarts:hover {
+  filter: sepia(0%) saturate(170%);
+  transition: 2000ms;
+}
+
+.ministry:hover {
+  filter: sepia(0%) saturate(170%);
+  transition: 2000ms;
+}
