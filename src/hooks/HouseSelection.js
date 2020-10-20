@@ -1,5 +1,6 @@
 import React from 'react'
 import hpHouseMain from '../images/hpHousesMain.png';
+import {Link} from 'react-router-dom';
 import "./HouseSelection.css";
 import hpHouseGryffindor from '../images/hpHousesGryffindor.png';
 import hpHouseSlytherin from '../images/hpHousesSlytherin.png';
@@ -9,44 +10,46 @@ import hpHouseRavenclaw from '../images/hpHousesRavenclaw.png';
 export default function HouseSelection() {
 
 
-    function backgroundStyle(img) {
-        return ( {
-            backgroundImage:`url(${img})`,
-            backgroundSize: "cover",
-            position: "absolute",
-            top: "0",
-            bottom: "0",
-            right: "0",
-            left: "0"
-        })
-    }
-
     function changeBackgroundToNormal(e) {
-        e.target.parentNode.style.backgroundImage = `url(${hpHouseMain})`;
+        let backgroundNode = document.querySelector(".houseBackground")
+        backgroundNode.style.backgroundImage = `url(${hpHouseMain})`;
+         // e.target.parentNode.parentNode.style.backgroundImage = `url(${hpHouseMain})`;
     }
 
     function changeBackgroundToGryffindor(e) {
-        e.target.parentNode.style.backgroundImage = `url(${hpHouseGryffindor})`;
+        let backgroundNode = document.querySelector(".houseBackground")
+        backgroundNode.style.backgroundImage = `url(${hpHouseGryffindor})`;
     }
 
     function changeBackgroundToSlytherin(e) {
-        e.target.parentNode.style.backgroundImage = `url(${hpHouseSlytherin})`;
+        let backgroundNode = document.querySelector(".houseBackground")
+        backgroundNode.style.backgroundImage = `url(${hpHouseSlytherin})`;
     }
 
     function changeBackgroundToHufflepuff(e) {
-        e.target.parentNode.style.backgroundImage = `url(${hpHouseHufflepuff})`;
+        let backgroundNode = document.querySelector(".houseBackground")
+        backgroundNode.style.backgroundImage = `url(${hpHouseHufflepuff})`;
     }
 
     function changeBackgroundToRavenclaw(e) {
-        e.target.parentNode.style.backgroundImage = `url(${hpHouseRavenclaw})`;
+        let backgroundNode = document.querySelector(".houseBackground")
+        backgroundNode.style.backgroundImage = `url(${hpHouseRavenclaw})`;
     }
 
     return (
         <div className="houseBackground" style={{backgroundImage:`url(${hpHouseMain})`}}>
-            <div className="houseDiv" onMouseOver={changeBackgroundToGryffindor} onMouseLeave={changeBackgroundToNormal}></div>
-            <div className="houseDiv" onMouseOver={changeBackgroundToSlytherin} onMouseLeave={changeBackgroundToNormal}></div>
-            <div className="houseDiv" onMouseOver={changeBackgroundToHufflepuff} onMouseLeave={changeBackgroundToNormal}></div>
-            <div className="houseDiv" onMouseOver={changeBackgroundToRavenclaw} onMouseLeave={changeBackgroundToNormal}></div>
+            <Link to="/hogwarts/houses/gryffindor">
+                <div className="houseDiv" onMouseOver={changeBackgroundToGryffindor} onMouseLeave={changeBackgroundToNormal}></div>
+            </Link>
+            <Link to="/hogwarts/houses/slytherin">
+                <div className="houseDiv" onMouseOver={changeBackgroundToSlytherin} onMouseLeave={changeBackgroundToNormal}></div>
+            </Link>
+            <Link to="/hogwarts/houses/hufflepuff">
+                <div className="houseDiv" onMouseOver={changeBackgroundToHufflepuff} onMouseLeave={changeBackgroundToNormal}></div>
+            </Link>
+            <Link to="/hogwarts/houses/ravenclaw">
+                <div className="houseDiv" onMouseOver={changeBackgroundToRavenclaw} onMouseLeave={changeBackgroundToNormal}></div>
+            </Link>
         </div>
     )
 }
