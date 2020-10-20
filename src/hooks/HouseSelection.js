@@ -1,11 +1,11 @@
 import React from 'react'
-import hpHouseMain from '../images/hpHousesMain.png';
+import hpHouseMain from '../images/hpHousesBackgMainv2.png';
 import {Link} from 'react-router-dom';
 import "./HouseSelection.css";
-import hpHouseGryffindor from '../images/hpHousesGryffindor.png';
-import hpHouseSlytherin from '../images/hpHousesSlytherin.png';
-import hpHouseHufflepuff from '../images/hpHousesHufflepuff.png';
-import hpHouseRavenclaw from '../images/hpHousesRavenclaw.png';
+import hpHouseGryffindor from '../images/hpHousesGryffindorBright.png';
+import hpHouseSlytherin from '../images/hpHousesSlytherinBright.png';
+import hpHouseHufflepuff from '../images/hpHousesHufflepuffBright.png';
+import hpHouseRavenclaw from '../images/hpHousesRavenclawBright.png';
 
 export default function HouseSelection() {
 
@@ -13,7 +13,6 @@ export default function HouseSelection() {
     function changeBackgroundToNormal(e) {
         let backgroundNode = document.querySelector(".houseBackground")
         backgroundNode.style.backgroundImage = `url(${hpHouseMain})`;
-         // e.target.parentNode.parentNode.style.backgroundImage = `url(${hpHouseMain})`;
     }
 
     function changeBackgroundToGryffindor(e) {
@@ -38,18 +37,10 @@ export default function HouseSelection() {
 
     return (
         <div className="houseBackground" style={{backgroundImage:`url(${hpHouseMain})`}}>
-            <Link to="/hogwarts/houses/gryffindor">
-                <div className="houseDiv"></div>
-            </Link>
-            <Link to="/hogwarts/houses/slytherin">
-                <div className="houseDiv"></div>
-            </Link>
-            <Link to="/hogwarts/houses/hufflepuff">
-                <div className="houseDiv"></div>
-            </Link>
-            <Link to="/hogwarts/houses/ravenclaw">
-                <div className="houseDiv"></div>
-            </Link>
+            <Link to="/hogwarts/houses/gryffindor" className="houseDiv" onMouseOver={changeBackgroundToGryffindor} onMouseLeave={changeBackgroundToNormal}></Link>
+            <Link to="/hogwarts/houses/slytherin" className="houseDiv" onMouseOver={changeBackgroundToSlytherin} onMouseLeave={changeBackgroundToNormal}></Link>
+            <Link to="/hogwarts/houses/hufflepuff" className="houseDiv" onMouseOver={changeBackgroundToHufflepuff} onMouseLeave={changeBackgroundToNormal}></Link>
+            <Link to="/hogwarts/houses/ravenclaw" className="houseDiv" onMouseOver={changeBackgroundToRavenclaw} onMouseLeave={changeBackgroundToNormal}></Link>
         </div>
     )
 }
