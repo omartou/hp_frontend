@@ -1,4 +1,5 @@
 .houseBackground {
+  background-image: url("../images/hpHousesBackgMainv2.png");
   background-size: cover;
   background: no-repeat center center fixed;
   position: absolute;
