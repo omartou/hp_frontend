@@ -1,21 +1,21 @@
 .houseBackground {
   background-size: cover;
+  background: no-repeat center center fixed;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  transition: 0.4s;
-}
-
-.houseBackground:hover {
-  filter: brightness(50%);
+  height: 100vh;
+  width: 100vw;
 }
 
 .houseDiv {
-  width: 50%;
-  height: 50%;
+  width: 50vw;
+  height: 50vh;
   float: left;
+  position: relative;
+  z-index: 4;
 }
 
 .houseDiv:hover {
