@@ -11,19 +11,17 @@ import HouseSelection from "./hooks/HouseSelection";
 
 const App = (props) => {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <div className="App">
         <GlobalStyles />
-        <Switch>
           <Route path="/hogwarts/houses">
             <HouseSelection/>
           </Route>
-          <Route path="/">
+          <Route exact path="/">
               <h1>Harry Potter</h1>
           </Route>
-        </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 };
 

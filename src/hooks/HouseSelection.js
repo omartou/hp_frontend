@@ -39,16 +39,16 @@ export default function HouseSelection() {
     return (
         <div className="houseBackground" style={{backgroundImage:`url(${hpHouseMain})`}}>
             <Link to="/hogwarts/houses/gryffindor">
-                <div className="houseDiv" onMouseOver={changeBackgroundToGryffindor} onMouseLeave={changeBackgroundToNormal}></div>
+                <div className="houseDiv"></div>
             </Link>
             <Link to="/hogwarts/houses/slytherin">
-                <div className="houseDiv" onMouseOver={changeBackgroundToSlytherin} onMouseLeave={changeBackgroundToNormal}></div>
+                <div className="houseDiv"></div>
             </Link>
             <Link to="/hogwarts/houses/hufflepuff">
-                <div className="houseDiv" onMouseOver={changeBackgroundToHufflepuff} onMouseLeave={changeBackgroundToNormal}></div>
+                <div className="houseDiv"></div>
             </Link>
             <Link to="/hogwarts/houses/ravenclaw">
-                <div className="houseDiv" onMouseOver={changeBackgroundToRavenclaw} onMouseLeave={changeBackgroundToNormal}></div>
+                <div className="houseDiv"></div>
             </Link>
         </div>
     )
