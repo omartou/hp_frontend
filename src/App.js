@@ -1,17 +1,17 @@
-import React from "react";
-import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { GlobalStyles } from "./components/GlobalStyle";
-import { CharacterProvider } from "./components/CharacterContext";
-import HouseSelection from "./components/HouseSelection";
-import HouseCharacters from "./components/HouseCharacters";
-import EmployeeCharacters from "./components/EmployeeCharacter";
-import { HouseMemberProvider } from "./components/HouseMemberContext";
-import HomePage from "./components/HomePage";
-import Details from "./components/Details";
-import MinistryCharacters from "./components/MinistryCharacters";
-import OtherCharacters from "./components/OtherCharacters";
-import HogwartsPage from "./components/HogwartsPage";
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { GlobalStyles } from './components/GlobalStyle';
+import { CharacterProvider } from './components/context/CharacterContext';
+import HouseSelection from './components/HouseSelection';
+import HouseCharacters from './components/HouseCharacters';
+import EmployeeCharacters from './components/EmployeeCharacter';
+import { HouseMemberProvider } from './components/context/HouseMemberContext';
+import HomePage from './components/HomePage';
+import Details from './components/Details';
+import MinistryCharacters from './components/MinistryCharacters';
+import OtherCharacters from './components/OtherCharacters';
+import HogwartsPage from './components/HogwartsPage';
 
 const App = (props) => {
   return (
@@ -21,15 +21,8 @@ const App = (props) => {
           <GlobalStyles />
           <Route exact path="/">
             <HomePage />
-            {/*             <h1>Harry Potter</h1>
-            <Link to='/hogwarts'>Hogwarts</Link>
-            <br />
-            <Link to='/ministry'>Ministry</Link>
-            <br />
-            <Link to='/other'>Other characters</Link>
-            <br /> */}
           </Route>
-          <Route exact path="/hogwarts">
+          <Route exact path='/hogwarts'>
             <HogwartsPage />
           </Route>
           <Route exact path="/ministry">

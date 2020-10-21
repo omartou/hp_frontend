@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CharacterContext } from "./CharacterContext";
 import { CardDetails, NameOnCardDetails } from "../styled_components/index";
 
+
 const Details = (props) => {
   const characterId = props.match.params.id;
   const [characters] = useContext(CharacterContext);

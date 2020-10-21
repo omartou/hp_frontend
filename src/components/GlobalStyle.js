@@ -8,7 +8,6 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   
-// pergamen background
   body {
     background-image: url(${img});
     background-position: center center;
