@@ -16,30 +16,28 @@ export default function Navbar( {title} ) {
     color: black;
 
     `
-    const StyledLi = styled.li`
+    const StyleDiv = styled.div`
     display: inline-block;
     padding: 5px;
-    font-size: 30px;
+    font-size: 2vw;
     vertical-align: middle;
     height: 150px;
-    width: 23%;
     `
 
     return (
-        <Navbar>
-        <ul style={{display: "inline", width:"100%"}}>
-            <StyledLi style={{float: "left", textAlign: "Left"}}>
-                <p>{title}</p>
-            </StyledLi>
-            <StyledLi style={{float: "center"}}>
+        <Navbar >
+        <div style={{ width:"100%", textAlign: "center", display: "flex"}}>
+            <StyleDiv style={{float: "left", textAlign: "Left", width: "35vw"}}>
+                {title}
+            </StyleDiv>
+            <StyleDiv style={{float: "center", width: "30vw"}}>
                 <Logo />
-            </StyledLi>
-            <StyledLi style={{float: "right", textAlign: "right"}}>
+            </StyleDiv>
+            <StyleDiv style={{float: "right", textAlign: "right", width: "35vw"}}>
                 <StyledLink to="/hogwarts">Hogwarts</StyledLink><br/>
                 <StyledLink to="/other">Other Characters</StyledLink><br/>
                 <StyledLink to="/ministry">Ministry of Magic</StyledLink><br/>
-             </StyledLi>
-        </ul>
-        </Navbar>
-    )
+             </StyleDiv>
+        </div>
+        </Navbar>)
 }
