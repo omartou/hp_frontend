@@ -1,10 +1,9 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
 
-const Card = styled(Link)`
+const CardDetails = styled.div`
   text-decoration: none;
-  width: 250px;
-  height: 200px;
+  width: 500px;
+  height: auto;
   background: #bebf89;
   color: #292929;
   box-shadow: #2f2419 10px 10px 5px;
@@ -19,4 +18,4 @@ const Card = styled(Link)`
   }
 `;
 
-export default Card;
+export default CardDetails;

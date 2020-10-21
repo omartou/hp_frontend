@@ -8,7 +8,11 @@ const Character = (props) => {
   return (
     <Card to={url}>
       <NameOnCard>{name}</NameOnCard>
-      <p>{species}</p>
+      <p>
+        <strong>Species: </strong>
+        {species}
+      </p>
+
     </Card>
   );
 };

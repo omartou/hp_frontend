@@ -17,41 +17,41 @@ const App = (props) => {
   return (
     <Router>
       <CharacterProvider>
-        <div className='App'>
+        <div className="App">
           <GlobalStyles />
-          <Route exact path='/'>
+          <Route exact path="/">
             <HomePage />
           </Route>
           <Route exact path='/hogwarts'>
             <HogwartsPage />
           </Route>
-          <Route exact path='/ministry'>
+          <Route exact path="/ministry">
             <MinistryCharacters />
           </Route>
-          <Route exact path='/other'>
+          <Route exact path="/other">
             <OtherCharacters />
           </Route>
-          <Route exact path='/houses'>
+          <Route exact path="/houses">
             <HouseSelection />
           </Route>
-          <Route exact path='/employees'>
+          <Route exact path="/employees">
             <EmployeeCharacters />
           </Route>
           <HouseMemberProvider>
-            <Route exact path='/gryffindor'>
-              <HouseCharacters house='Gryffindor' />
+            <Route exact path="/gryffindor">
+              <HouseCharacters house="Gryffindor" />
             </Route>
-            <Route exact path='/hufflepuff'>
-              <HouseCharacters house='Hufflepuff' />
+            <Route exact path="/hufflepuff">
+              <HouseCharacters house="Hufflepuff" />
             </Route>
-            <Route exact path='/ravenclaw'>
-              <HouseCharacters house='Ravenclaw' />
+            <Route exact path="/ravenclaw">
+              <HouseCharacters house="Ravenclaw" />
             </Route>
-            <Route exact path='/slytherin'>
-              <HouseCharacters house='Slytherin' />
+            <Route exact path="/slytherin">
+              <HouseCharacters house="Slytherin" />
             </Route>
           </HouseMemberProvider>
-          <Route exact path='/character/:id' component={Details}></Route>
+          <Route exact path="/character/:id" component={Details}></Route>
         </div>
       </CharacterProvider>
     </Router>

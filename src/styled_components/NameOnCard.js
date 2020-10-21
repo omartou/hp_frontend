@@ -1,7 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const NameOnCard = styled.p`
+export const NameOnCard = styled.p`
   font-weight: bolder;
-`
+  font-size: 20px;
+  font-family: fantasy;
+`;
 
-export default NameOnCard;
+export const NameOnCardDetails = styled.p`
+  font-weight: bolder;
+  font-size: 30px;
+  font-family: fantasy;
+`;
