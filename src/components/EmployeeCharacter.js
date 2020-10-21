@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CharacterContext } from './CharacterContext';
-import Character from "./Character";
-import Logo from "./Logo";
+import Character from './Character';
+import Logo from './Logo';
 
 const EmployeeCharacters = (props) => {
   const [characters] = useContext(CharacterContext);
@@ -10,17 +10,23 @@ const EmployeeCharacters = (props) => {
   } else {
     return (
       <div>
-        <Logo/>
+        <Logo />
         <div className='grid-container'>
-          {characters.map((character) => {
-            return (
-              <Character 
-                key={character._id} 
-                name={character.name} 
-                charId={character._id}
-                species={character.species}
-              />);
-          })}
+          {characters
+            .filter(
+              (character) =>
+                character.role && character.role.split(',')[0] === 'Professor'
+            )
+            .map((character) => {
+              return (
+                <Character
+                  key={character._id}
+                  name={character.name}
+                  charId={character._id}
+                  species={character.species}
+                />
+              );
+            })}
         </div>
       </div>
     );
