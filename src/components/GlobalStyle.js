@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import img from "../images/background.png";
+import { createGlobalStyle } from 'styled-components';
+import img from '../images/background.png';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -11,5 +11,8 @@ export const GlobalStyles = createGlobalStyle`
 // pergamen background
   body {
     background-image: url(${img});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
   }`;
