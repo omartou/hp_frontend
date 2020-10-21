@@ -13,7 +13,9 @@ const Details = (props) => {
         <p>{characterDetails.name}</p>
         {characterDetails.alias ? <p>{characterDetails.alias}</p> : null}
         <p>{characterDetails.species}</p>
-        <p>Blood type: {characterDetails.bloodStatus}</p>
+        {characterDetails.bloodStatus === 'unknown' ? null : (
+          <p>Blood type: {characterDetails.bloodStatus}</p>
+        )}
         <p>{characterDetails.school}</p>
         {characterDetails.house ? <p>{characterDetails.house}</p> : null}
         {characterDetails.role ? <p>{characterDetails.role}</p> : null}
