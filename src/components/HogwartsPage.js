@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {
     Link
 } from 'react-router-dom';
@@ -8,7 +8,11 @@ import highTable from '../images/highTableBorder.png';
 import brickWall from '../images/brickwall.png';
 
 
-export default function HogwartsPage() {
+export default function HogwartsPage(props) {
+    useEffect(() => {
+        props.setTitle("Hogwarts")
+      }, [])
+
     return (
         <div className="HogwartsBackground" style={{backgroundImage:`url(${brickWall})`}}>
             <div className="houseSelectionDiv">

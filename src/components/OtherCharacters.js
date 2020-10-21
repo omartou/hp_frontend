@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CharacterContext } from './context/CharacterContext';
 import Character from './Character';
 import Content from '../styled_components/Content';
 
 const OtherCharacters = (props) => {
   const [characters] = useContext(CharacterContext);
+
+  useEffect(() => {
+    props.setTitle("Other characters")
+  }, [])
+
   if (characters.length === 0) {
     return <p>Character is loading...</p>;
   } else {

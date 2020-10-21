@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './HomePage.css';
 import {
   MinistryImage,
@@ -7,7 +7,12 @@ import {
   OtherImage
 } from '../styled_components/index';
 
-export default function HomePage() {
+export default function HomePage(props) {
+  useEffect(() => {
+    props.setTitle("Home");
+  }, [])
+
+
   return (
     <HomePageContainer>
       <HogwartsImage to='/hogwarts'></HogwartsImage>

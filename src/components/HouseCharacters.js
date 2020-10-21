@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CharacterContext } from './context/CharacterContext';
 import { HouseMemberContext } from './context/HouseMemberContext';
 import Character from './Character';
@@ -8,6 +8,10 @@ import Content from '../styled_components/Content';
 const HouseCharacters = (props) => {
   const [characters] = useContext(CharacterContext);
   const [houses] = useContext(HouseMemberContext);
+
+  useEffect(() => {
+    props.setTitle(props.house)
+  }, [])
 
   if (characters.length === 0 && houses.length === 0) {
     return <p>Character is loading...</p>;
