@@ -9,6 +9,7 @@ import HouseCharacters from './components/HouseCharacters';
 import EmployeeCharacters from './components/EmployeeCharacter';
 import { HouseMemberProvider } from './components/HouseMemberContext';
 import HomePage from './components/HomePage';
+import Details from './components/Details';
 
 const App = (props) => {
   return (
@@ -17,15 +18,14 @@ const App = (props) => {
         <div className='App'>
           <GlobalStyles />
           <Route exact path='/'>
-            <HomePage/>
-{/*             <h1>Harry Potter</h1>
+            <HomePage />
+            {/*             <h1>Harry Potter</h1>
             <Link to='/hogwarts'>Hogwarts</Link>
             <br />
             <Link to='/ministry'>Ministry</Link>
             <br />
             <Link to='/other'>Other characters</Link>
-            <br /> */
-            }
+            <br /> */}
           </Route>
           <Route exact path='/hogwarts'>
             <Link to='/houses'>Houses</Link>
@@ -59,7 +59,7 @@ const App = (props) => {
               <HouseCharacters house='Slytherin' />
             </Route>
           </HouseMemberProvider>
-          <Route exact path='/character/id'></Route>
+          <Route exact path='/character/:id' component={Details}></Route>
         </div>
       </CharacterProvider>
     </Router>
