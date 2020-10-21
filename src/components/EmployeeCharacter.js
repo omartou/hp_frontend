@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CharacterContext } from './context/CharacterContext';
 import Character from './Character';
-import Logo from './Logo';
+import Content from '../styled_components/Content';
 
 const EmployeeCharacters = (props) => {
   const [characters] = useContext(CharacterContext);
@@ -9,8 +9,7 @@ const EmployeeCharacters = (props) => {
     return <p>Character is loading...</p>;
   } else {
     return (
-      <div>
-        <Logo />
+      <Content>
         <div className='grid-container'>
           {characters
             .filter(
@@ -28,7 +27,7 @@ const EmployeeCharacters = (props) => {
               );
             })}
         </div>
-      </div>
+      </Content>
     );
   }
 };

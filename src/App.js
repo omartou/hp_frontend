@@ -12,12 +12,15 @@ import Details from './components/Details';
 import MinistryCharacters from './components/MinistryCharacters';
 import OtherCharacters from './components/OtherCharacters';
 import HogwartsPage from './components/HogwartsPage';
+import Navbar from './components/Navbar';
+
 
 const App = (props) => {
   return (
     <Router>
       <CharacterProvider>
         <div className='App'>
+          <Navbar/>
           <GlobalStyles />
           <Route exact path='/'>
             <HomePage />
