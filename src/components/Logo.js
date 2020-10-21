@@ -9,8 +9,8 @@ const Logo = (props) => {
       <Link to="/">
         <img 
             src={logo} 
-            width="280px"
-            height="146px"
+            width="100%"
+            height="auto"
             alt="HARRY POTTER"/>
       </Link>
     </div>
