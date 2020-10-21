@@ -9,6 +9,7 @@ import HouseCharacters from './components/HouseCharacters';
 import EmployeeCharacters from './components/EmployeeCharacter';
 import { HouseMemberProvider } from './components/HouseMemberContext';
 import HomePage from './components/HomePage';
+import HogwartsPage from "./components/HogwartsPage";
 
 const App = (props) => {
   return (
@@ -28,10 +29,7 @@ const App = (props) => {
             }
           </Route>
           <Route exact path='/hogwarts'>
-            <Link to='/houses'>Houses</Link>
-            <br />
-            <Link to='/employees'>Employees</Link>
-            <br />
+            <HogwartsPage/>
           </Route>
           <Route exact path='/ministry'>
             <CharacterList />

@@ -1,11 +1,11 @@
 import React from 'react'
-import hpHouseMain from '../images/hpHousesBackgMainv2.png';
+import hpHouseMain from '../images/hpHousesBackgMainv2Border.png';
 import {Link} from 'react-router-dom';
 import "./HouseSelection.css";
-import hpHouseGryffindor from '../images/hpHousesGryffindorBright.png';
-import hpHouseSlytherin from '../images/hpHousesSlytherinBright.png';
-import hpHouseHufflepuff from '../images/hpHousesHufflepuffBright.png';
-import hpHouseRavenclaw from '../images/hpHousesRavenclawBright.png';
+import hpHouseGryffindor from '../images/hpHousesGryffindorBrightBorder.png';
+import hpHouseSlytherin from '../images/hpHousesSlytherinBrightBorder.png';
+import hpHouseHufflepuff from '../images/hpHousesHufflepuffBrightBorder.png';
+import hpHouseRavenclaw from '../images/hpHousesRavenclawBrightBorder.png';
 
 export default function HouseSelection() {
 
