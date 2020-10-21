@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { CharacterContext } from './CharacterContext';
+import Character from "./Character";
+import Logo from "./Logo"
 
 const CharacterList = () => {
   const [characters] = useContext(CharacterContext);
@@ -8,11 +10,21 @@ const CharacterList = () => {
       <p>Character is loading...</p>
     )
   } else {
+    console.log(characters);
     return (
       <div>
-        {characters.map((character) => {
-          return <div key={character._id}>{character.name}</div>;
-        })}
+        <Logo/>
+        <div className='grid-container'>
+          {characters.map((character) => {
+            return (
+              <Character 
+                key={character._id}
+                name={character.name} 
+                charId={character._id} 
+                species={character.species}
+              />);
+          })}
+        </div>
       </div>
     );
   }
