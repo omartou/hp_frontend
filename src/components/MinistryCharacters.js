@@ -1,16 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CharacterContext } from './context/CharacterContext';
 import Character from './Character';
-import Logo from './Logo';
+import Content from '../styled_components/Content';
 
 const MinistryCharacters = (props) => {
   const [characters] = useContext(CharacterContext);
+
+  useEffect(() => {
+    props.setTitle("Ministry")
+  }, [])
+
   if (characters.length === 0) {
     return <p>Character is loading...</p>;
   } else {
     return (
-      <div>
-        <Logo />
+      <Content>
         <div className='grid-container'>
           {characters
             .filter((character) => character.ministryOfMagic)
@@ -25,7 +29,7 @@ const MinistryCharacters = (props) => {
               );
             })}
         </div>
-      </div>
+      </Content>
     );
   }
 };

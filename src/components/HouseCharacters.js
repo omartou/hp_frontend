@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CharacterContext } from './context/CharacterContext';
 import { HouseMemberContext } from './context/HouseMemberContext';
 import Character from './Character';
-import Logo from './Logo';
+import Content from '../styled_components/Content';
+
 
 const HouseCharacters = (props) => {
   const [characters] = useContext(CharacterContext);
   const [houses] = useContext(HouseMemberContext);
+
+  useEffect(() => {
+    props.setTitle(props.house)
+  }, [])
 
   if (characters.length === 0 && houses.length === 0) {
     return <p>Character is loading...</p>;
@@ -14,8 +19,7 @@ const HouseCharacters = (props) => {
     const houseMembers = houses.filter((house) => house.name === props.house)[0]
       .members;
     return (
-      <div>
-        <Logo />
+      <Content>
         <div className='grid-container'>
           {characters
             .filter((character) => houseMembers.includes(character._id))
@@ -30,7 +34,7 @@ const HouseCharacters = (props) => {
               );
             })}
         </div>
-      </div>
+      </Content>
     );
   }
 };

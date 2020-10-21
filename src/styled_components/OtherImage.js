@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import ministry from '../images/ministry.png';
+import hogwarts from '../images/dursley.png';
 
-const MinistryImage = styled(Link)`
-  background-image: url(${ministry});
+const HogwartsImage = styled(Link)`
+  background-image: url(${hogwarts});
   position: absolute;
-  right: 10vw;
-  top: 35vh;
+  left: 30vw;
+  top: 68vh;
   height: 28vh;
   width: 28vw;
   background-size: 28vw 28vh;
@@ -20,4 +20,4 @@ const MinistryImage = styled(Link)`
   }
 `
 
-export default MinistryImage;
+export default HogwartsImage;

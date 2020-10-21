@@ -1,18 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './HomePage.css';
-import Logo from './Logo';
 import {
   MinistryImage,
   HogwartsImage,
   HomePageContainer,
+  OtherImage
 } from '../styled_components/index';
 
-export default function HomePage() {
+export default function HomePage(props) {
+  useEffect(() => {
+    props.setTitle("Home");
+  }, [])
+
+
   return (
     <HomePageContainer>
-      <Logo />
       <HogwartsImage to='/hogwarts'></HogwartsImage>
       <MinistryImage to='/ministry'></MinistryImage>
+      <OtherImage to="/other"></OtherImage>
     </HomePageContainer>
   );
 }

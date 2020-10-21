@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CharacterContext } from "./context/CharacterContext";
 import { CardDetails, NameOnCardDetails } from "../styled_components/index";
+import Content from "../styled_components/Content";
 
 const Details = (props) => {
   const characterId = props.match.params.id;
@@ -8,9 +9,11 @@ const Details = (props) => {
   const characterDetails = characters.filter(
     (character) => character._id === characterId
   )[0];
+
+  
   if (characterDetails) {
     return (
-      <div className="character-details">
+      <Content className="character-details">
         <CardDetails>
           <NameOnCardDetails>{characterDetails.name}</NameOnCardDetails>
           {characterDetails.alias ? (
@@ -70,7 +73,7 @@ const Details = (props) => {
             </p>
           ) : null}
         </CardDetails>
-      </div>
+      </Content>
     );
   } else {
     return <div></div>;

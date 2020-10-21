@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { GlobalStyles } from './components/GlobalStyle';
@@ -12,46 +12,48 @@ import Details from './components/Details';
 import MinistryCharacters from './components/MinistryCharacters';
 import OtherCharacters from './components/OtherCharacters';
 import HogwartsPage from './components/HogwartsPage';
+import Navbar from './components/Navbar';
+
 
 const App = (props) => {
+  const [title, setTitle] = useState([]); 
+
   return (
     <Router>
       <CharacterProvider>
-        <div className="App">
+        <div className='App'>
+          <Navbar title={title}/>
           <GlobalStyles />
-          <Route exact path="/">
-            <HomePage />
+          <Route exact path='/'>
+            <HomePage setTitle={setTitle}/>
           </Route>
           <Route exact path='/hogwarts'>
-            <HogwartsPage />
+            <HogwartsPage setTitle={setTitle} />
           </Route>
-          <Route exact path="/ministry">
-            <MinistryCharacters />
+          <Route exact path='/ministry'>
+            <MinistryCharacters setTitle={setTitle} />
           </Route>
-          <Route exact path="/other">
-            <OtherCharacters />
+          <Route exact path='/other'>
+            <OtherCharacters setTitle={setTitle} />
           </Route>
-          <Route exact path="/houses">
-            <HouseSelection />
-          </Route>
-          <Route exact path="/employees">
-            <EmployeeCharacters />
+          <Route exact path='/employees'>
+            <EmployeeCharacters setTitle={setTitle} />
           </Route>
           <HouseMemberProvider>
-            <Route exact path="/gryffindor">
-              <HouseCharacters house="Gryffindor" />
+            <Route exact path='/gryffindor'>
+              <HouseCharacters setTitle={setTitle} house='Gryffindor' />
             </Route>
-            <Route exact path="/hufflepuff">
-              <HouseCharacters house="Hufflepuff" />
+            <Route exact path='/hufflepuff'>
+              <HouseCharacters setTitle={setTitle} house='Hufflepuff' />
             </Route>
-            <Route exact path="/ravenclaw">
-              <HouseCharacters house="Ravenclaw" />
+            <Route exact path='/ravenclaw'>
+              <HouseCharacters setTitle={setTitle} house='Ravenclaw' />
             </Route>
-            <Route exact path="/slytherin">
-              <HouseCharacters house="Slytherin" />
+            <Route exact path='/slytherin'>
+              <HouseCharacters setTitle={setTitle} house='Slytherin' />
             </Route>
           </HouseMemberProvider>
-          <Route exact path="/character/:id" component={Details}></Route>
+          <Route exact path='/character/:id' component={Details} setTitle={setTitle}></Route>
         </div>
       </CharacterProvider>
     </Router>

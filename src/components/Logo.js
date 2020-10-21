@@ -11,7 +11,7 @@ const Logo = (props) => {
             src={logo} 
             width="280px"
             height="146px"
-            alt="HARRY POTTER" />
+            alt="HARRY POTTER"/>
       </Link>
     </div>
   );

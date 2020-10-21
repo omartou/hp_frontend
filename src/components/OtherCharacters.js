@@ -1,16 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CharacterContext } from './context/CharacterContext';
 import Character from './Character';
-import Logo from './Logo';
+import Content from '../styled_components/Content';
 
 const OtherCharacters = (props) => {
   const [characters] = useContext(CharacterContext);
+
+  useEffect(() => {
+    props.setTitle("Other characters")
+  }, [])
+
   if (characters.length === 0) {
     return <p>Character is loading...</p>;
   } else {
     return (
-      <div>
-        <Logo />
+      <Content>
         <div className='grid-container'>
           {characters
             .filter(
@@ -31,7 +35,7 @@ const OtherCharacters = (props) => {
               );
             })}
         </div>
-      </div>
+      </Content>
     );
   }
 };
