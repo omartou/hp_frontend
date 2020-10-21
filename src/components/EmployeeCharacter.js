@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CharacterContext } from './CharacterContext';
+import { CharacterContext } from './context/CharacterContext';
 import Character from './Character';
 import Logo from './Logo';
 

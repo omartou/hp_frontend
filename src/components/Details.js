@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CharacterContext } from './CharacterContext';
+import { CharacterContext } from './context/CharacterContext';
 
 const Details = (props) => {
   const characterId = props.match.params.id;
