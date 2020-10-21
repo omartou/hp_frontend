@@ -17,7 +17,7 @@ export const CharacterProvider = (props) => {
   });
 
   return (
-    <CharacterContext.Provider value={[characters, setCharacters]}>
+    <CharacterContext.Provider value={[characters]}>
       {props.children}
     </CharacterContext.Provider>
   );
