@@ -19,7 +19,7 @@
 import React from 'react'
 import "./HomePage.css";
 import Logo from "./Logo";
-import {MinistryImage, HogwartsImage, HomePageContainer} from "../styled_components/index";
+import {MinistryImage, HogwartsImage, HomePageContainer, OtherImage} from "../styled_components/index";
 
 
 export default function HomePage() {
@@ -28,6 +28,7 @@ export default function HomePage() {
             <Logo/>
             <HogwartsImage to="/hogwarts"></HogwartsImage>
             <MinistryImage to="/ministry"></MinistryImage>
+            <OtherImage to="/other"></OtherImage>
         </HomePageContainer>
     )
 }
