@@ -10,6 +10,8 @@ import EmployeeCharacters from './components/EmployeeCharacter';
 import { HouseMemberProvider } from './components/HouseMemberContext';
 import HomePage from './components/HomePage';
 import Details from './components/Details';
+import MinistryCharacters from './components/MinistryCharacters';
+import OtherCharacters from './components/OtherCharacters';
 
 const App = (props) => {
   return (
@@ -34,10 +36,10 @@ const App = (props) => {
             <br />
           </Route>
           <Route exact path='/ministry'>
-            <CharacterList />
+            <MinistryCharacters />
           </Route>
           <Route exact path='/other'>
-            <CharacterList />
+            <OtherCharacters />
           </Route>
           <Route exact path='/houses'>
             <HouseSelection />

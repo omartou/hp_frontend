@@ -19,8 +19,8 @@ const Details = (props) => {
         <p>{characterDetails.school}</p>
         {characterDetails.house ? <p>{characterDetails.house}</p> : null}
         {characterDetails.role ? <p>{characterDetails.role}</p> : null}
-        {characterDetails.minisrtyOfMagic ? (
-          <p>Works in the Minisrty of Magic</p>
+        {characterDetails.ministryOfMagic ? (
+          <p>Works in the Ministry of Magic</p>
         ) : null}
         {characterDetails.orderOfPhoenix ? (
           <p>Part of the Order of Phoenix</p>
