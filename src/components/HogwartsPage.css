@@ -15,7 +15,7 @@
 
 .employees {
   filter: saturate(150%);
-  background-size: 30vw;
+  background-size: 30vw 70vh;
   background-repeat: no-repeat;
   height: 70vh;
   width: 30vw;
