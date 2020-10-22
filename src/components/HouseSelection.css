@@ -1,0 +1,25 @@
+.houseBackground {
+  background-image: url("../images/hpHousesBackgMainv2Border.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.houseDiv {
+  width: 50%;
+  height: 50%;
+  float: left;
+  position: relative;
+  z-index: 4;
+}
+
+.houseDiv:hover {
+  transition: 600ms;
+}

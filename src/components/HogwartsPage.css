@@ -1,0 +1,51 @@
+.HogwartsBackground {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  filter: sepia(10%) brightness(70%);
+}
+
+.houseSelectionDiv {
+  position: absolute;
+  bottom: 10vh;
+  left: 20vh;
+  height: 45vh;
+  width: 40vw;
+}
+
+.employees {
+  filter: saturate(150%);
+  background-size: 30vw 70vh;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 30vw;
+  position: absolute;
+  right: 20vh;
+  top: 20vh;
+}
+
+.staffTitle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 5vh;
+  font-weight: bold;
+  font-style: italic;
+  opacity: 50%;
+  position: absolute;
+  width: 30vw;
+  height: 5vh;
+  right: 10vw;
+  top: 87vh;
+}
+
+.housesTitle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 5vh;
+  font-style: italic;
+  font-weight: bold;
+  opacity: 50%;
+  position: absolute;
+  height: 5vh;
+  width: 40vw;
+  bottom: 57vh;
+  left: 20vh;
+}
