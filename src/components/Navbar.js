@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import { Link } from "react-router-dom";
 
-
-export default function Navbar( {title} ) {
-    const Navbar = styled.div`
+const StyledNavbar = styled.div`
     position: absolute;
     z-index: 999;
     width: 100%;
@@ -34,9 +32,10 @@ export default function Navbar( {title} ) {
     vertical-align: middle;
     height: 120px;
     `
-
+    
+export default function Navbar( {title} ) {
     return (
-        <Navbar >
+        <StyledNavbar >
         <div style={{ width:"100%", textAlign: "center", display: "flex"}}>
             <StyleDiv style={{float: "left", textAlign: "Left", verticalAlign:"middle", width: "40vw"}} >
                 {title}
@@ -50,5 +49,5 @@ export default function Navbar( {title} ) {
                 <StyledLink to="/ministry">Ministry of Magic</StyledLink><br/>
              </StyleDiv>
         </div>
-        </Navbar>)
+        </StyledNavbar>)
 }
