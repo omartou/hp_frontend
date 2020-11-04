@@ -9,7 +9,7 @@ const OtherCharacters = (props) => {
   useEffect(() => {
     props.setTitle("Other characters");
     axios
-      .get("http://localhost:8080/hogwarts/other")
+      .get("http://localhost:8080/other")
       .then((res) => setOtherCharacters(res.data));
   }, [props]);
 

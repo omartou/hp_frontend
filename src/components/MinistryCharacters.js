@@ -9,7 +9,7 @@ const MinistryCharacters = (props) => {
   useEffect(() => {
     props.setTitle("Ministry");
     axios
-      .get("http://localhost:8080/hogwarts/ministry")
+      .get("http://localhost:8080/ministry")
       .then((res) => setMinistryCharacters(res.data));
   }, [props]);
 
