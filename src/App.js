@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { GlobalStyles } from './components/GlobalStyle';
 import { CharacterProvider } from './components/context/CharacterContext';
-import HouseSelection from './components/HouseSelection';
 import HouseCharacters from './components/HouseCharacters';
 import EmployeeCharacters from './components/EmployeeCharacter';
 import { HouseMemberProvider } from './components/context/HouseMemberContext';
@@ -14,18 +13,17 @@ import OtherCharacters from './components/OtherCharacters';
 import HogwartsPage from './components/HogwartsPage';
 import Navbar from './components/Navbar';
 
-
 const App = (props) => {
-  const [title, setTitle] = useState([]); 
+  const [title, setTitle] = useState([]);
 
   return (
     <Router>
       <CharacterProvider>
         <div className='App'>
-          <Navbar title={title}/>
+          <Navbar title={title} />
           <GlobalStyles />
           <Route exact path='/'>
-            <HomePage setTitle={setTitle}/>
+            <HomePage setTitle={setTitle} />
           </Route>
           <Route exact path='/hogwarts'>
             <HogwartsPage setTitle={setTitle} />
@@ -53,7 +51,12 @@ const App = (props) => {
               <HouseCharacters setTitle={setTitle} house='Slytherin' />
             </Route>
           </HouseMemberProvider>
-          <Route exact path='/character/:id' component={Details} setTitle={setTitle}></Route>
+          <Route
+            exact
+            path='/character/:id'
+            component={Details}
+            setTitle={setTitle}
+          ></Route>
         </div>
       </CharacterProvider>
     </Router>

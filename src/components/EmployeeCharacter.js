@@ -1,39 +1,33 @@
-import React, { useContext, useEffect } from 'react';
-import { CharacterContext } from './context/CharacterContext';
+import React, { useEffect, useState } from 'react';
 import Character from './Character';
 import Content from '../styled_components/Content';
+import axios from 'axios';
 
 const EmployeeCharacters = (props) => {
-  const [characters] = useContext(CharacterContext);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    props.setTitle("Employees")
-  }, [])
+    props.setTitle('Employees');
+    axios
+      .get('http://localhost:8080/hogwarts/employees')
+      .then((res) => setCharacters(res.data));
+  }, [props]);
 
-  if (characters.length === 0) {
-    return <p>Character is loading...</p>;
-  } else {
-    return (
-      <Content>
-        <div className='grid-container'>
-          {characters
-            .filter(
-              (character) =>
-                character.role && character.role.split(',')[0] === 'Professor'
-            )
-            .map((character) => {
-              return (
-                <Character
-                  key={character._id}
-                  name={character.name}
-                  charId={character._id}
-                  species={character.species}
-                />
-              );
-            })}
-        </div>
-      </Content>
-    );
-  }
+  return (
+    <Content>
+      <div className='grid-container'>
+        {characters.map((character) => {
+          return (
+            <Character
+              key={character._id}
+              name={character.name}
+              charId={character._id}
+              species={character.species}
+            />
+          );
+        })}
+      </div>
+    </Content>
+  );
 };
 export default EmployeeCharacters;
