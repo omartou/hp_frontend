@@ -1,16 +1,17 @@
-import React, { useContext, useEffect } from "react";
-import { CharacterContext } from "./context/CharacterContext";
+import React, { useState, useEffect } from "react";
 import { CardDetails, NameOnCardDetails } from "../styled_components/index";
 import Content from "../styled_components/Content";
+import axios from "axios";
 
 const Details = (props) => {
-  const characterId = props.match.params.id;
-  const [characters] = useContext(CharacterContext);
-  const characterDetails = characters.filter(
-    (character) => character._id === characterId
-  )[0];
+  const [characterDetails, setCharacterDetails] = useState({});
 
-  
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/character/${props.match.params.id}`)
+      .then((res) => setCharacterDetails(res.data));
+  }, [props]);
+
   if (characterDetails) {
     return (
       <Content className="character-details">
