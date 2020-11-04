@@ -1,4 +1,5 @@
 .HogwartsBackground {
+  background-image: url(../images/brickwall.png);
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -11,10 +12,15 @@
   left: 20vh;
   height: 45vh;
   width: 40vw;
+  background-image: url("../images/hpHousesBackgMainv2Border.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .employees {
   filter: saturate(150%);
+  background-image: url(../images/highTableBorder.png);
   background-size: 30vw 70vh;
   background-repeat: no-repeat;
   height: 70vh;
