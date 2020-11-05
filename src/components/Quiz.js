@@ -56,7 +56,7 @@ const Quiz = () => {
   };
 
   return (
-    <div>
+    <div className="grid-container">
       <h1>HouseQuiz</h1>
       <div>
         <p>Guess which house the character is in!</p>

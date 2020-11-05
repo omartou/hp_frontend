@@ -1,3 +1,12 @@
+.question {
+  width: 75vw;
+  height: 20vh;
+  border: 1px black solid;
+  margin-bottom: 2vh;
+  padding: 2vh;
+  font-size: 10vh;
+}
+
 .answers {
   width: 75vw;
   background-color: #bebf89;
@@ -5,11 +14,14 @@
   display: inline-block;
 }
 .answer {
-  width: 50%;
-  height: 50%;
+  width: 47%;
+  height: 47%;
   border: 1px solid black;
   display: inline-block;
   padding: 25px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 2vh;
 }
 
 .marked {
