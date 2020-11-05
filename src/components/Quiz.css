@@ -1,0 +1,25 @@
+.answers {
+  width: 75vw;
+  background-color: #bebf89;
+  height: 150px;
+  display: inline-block;
+}
+.answer {
+  width: 50%;
+  height: 50%;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 25px;
+}
+
+.marked {
+  background-color: orange;
+}
+
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
