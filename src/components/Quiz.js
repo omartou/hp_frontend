@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Quiz.css';
+import Content from '../styled_components/Content'
 
 const Quiz = () => {
   const [randomCharacter, setRandomCharacter] = useState({});
@@ -12,14 +13,17 @@ const Quiz = () => {
     axios
       .get('http://localhost:8080/quiz/house/random')
       .then((res) => setRandomCharacter(res.data));
-    reset();
+    if (lives !== 0) {
+      reset();
+    }
+
   }, [score, lives]);
 
   const markAnswer = (e) => {
+    removeOnClicks();
     let target = e.target;
     target.className = 'answer marked';
     markCorrect(target);
-    setTimeout(() => {});
   };
 
   const markCorrect = (target) => {
@@ -50,6 +54,13 @@ const Quiz = () => {
     }, 2000);
   };
 
+  const removeOnClicks = () => {
+    let answers = document.querySelectorAll(".answer");
+    for (let answer of answers) {
+      answer.className = 'answer disabled';
+    }
+  }
+
   const reset = () => {
     document.getElementById('question').className = 'question';
     let answers = document.getElementsByClassName('answer');
@@ -58,32 +69,41 @@ const Quiz = () => {
     }
   };
 
-  return (
-    <div className='grid-container'>
-      <h1>HouseQuiz</h1>
-      <div>
-        <p>Guess which house the character is in!</p>
-        <p>Lives : {lives}</p>
-        <p>Score : {score}</p>
-      </div>
-      <div className='question' id='question'>
-        {randomCharacter ? <div>{randomCharacter.name}</div> : <div></div>}
-      </div>
-      <div className='answers'>
-        <div className='answer' onClick={markAnswer} id='Gryffindor'>
-          Gryffindor
+  if(lives === 0) {
+      return (<Content className="grid-container">
+        <div>Game Over</div>
+      <div>Your score is {score}!</div>
+      <div onClick={() => {setLives(3); setScore(0)}}>Try again</div>
+      </Content>)
+  } else {
+    return (
+      <Content className='grid-container'>
+        <h1>HouseQuiz</h1>
+        <div>
+          <p>Guess which house the character is in!</p>
+          <p>Lives : {lives}</p>
+          <p>Score : {score}</p>
         </div>
-        <div className='answer' onClick={markAnswer} id='Hufflepuff'>
-          Hufflepuff
+        <div className='question' id='question'>
+          {randomCharacter ? <div>{randomCharacter.name}</div> : <div></div>}
         </div>
-        <div className='answer' onClick={markAnswer} id='Slytherin'>
-          Slytherin
+        <div className='answers'>
+          <div className='answer' onClick={markAnswer} id='Gryffindor'>
+            Gryffindor
+          </div>
+          <div className='answer' onClick={markAnswer} id='Hufflepuff'>
+            Hufflepuff
+          </div>
+          <div className='answer' onClick={markAnswer} id='Slytherin'>
+            Slytherin
+          </div>
+          <div className='answer' onClick={markAnswer} id='Ravenclaw'>
+            Ravenclaw
+          </div>
         </div>
-        <div className='answer' onClick={markAnswer} id='Ravenclaw'>
-          Ravenclaw
-        </div>
-      </div>
-    </div>
-  );
+      </Content>
+    ); 
+  }
+
 };
 export default Quiz;

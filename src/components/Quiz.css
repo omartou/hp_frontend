@@ -24,14 +24,24 @@
   margin-bottom: 2vh;
 }
 
+.answer:hover {
+  cursor: pointer;
+}
 .marked {
   background-color: orange;
+  pointer-events: none;
 }
 
 .correct {
   background-color: green;
+  pointer-events: none;
 }
 
 .wrong {
   background-color: red;
+  pointer-events: none;
+}
+
+.disabled {
+  pointer-events: none;
 }
