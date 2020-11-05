@@ -26,11 +26,13 @@ const Quiz = () => {
     setTimeout(() => {
       if (target.id === randomCharacter.house) {
         target.className = 'answer correct';
+        document.getElementById('question').className = 'question correct';
         increaseScore();
       } else {
         document.getElementById(randomCharacter.house).className =
           'answer correct';
         target.className = 'answer wrong';
+        document.getElementById('question').className = 'question wrong';
         decreaseLives();
       }
     }, 3000);
@@ -49,6 +51,7 @@ const Quiz = () => {
   };
 
   const reset = () => {
+    document.getElementById('question').className = 'question';
     let answers = document.getElementsByClassName('answer');
     for (let element of answers) {
       element.className = 'answer';
@@ -56,14 +59,14 @@ const Quiz = () => {
   };
 
   return (
-    <div className="grid-container">
+    <div className='grid-container'>
       <h1>HouseQuiz</h1>
       <div>
         <p>Guess which house the character is in!</p>
         <p>Lives : {lives}</p>
         <p>Score : {score}</p>
       </div>
-      <div className='question'>
+      <div className='question' id='question'>
         {randomCharacter ? <div>{randomCharacter.name}</div> : <div></div>}
       </div>
       <div className='answers'>
