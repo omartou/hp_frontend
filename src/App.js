@@ -10,12 +10,13 @@ import MinistryCharacters from './components/MinistryCharacters';
 import OtherCharacters from './components/OtherCharacters';
 import HogwartsPage from './components/HogwartsPage';
 import Navbar from './components/Navbar';
+import Quiz from './components/Quiz';
 
 const App = (props) => {
   const [title, setTitle] = useState([]);
 
   return (
-   <Router>
+    <Router>
       <div className='App'>
         <Navbar title={title} />
         <GlobalStyles />
@@ -45,6 +46,9 @@ const App = (props) => {
         </Route>
         <Route exact path='/slytherin'>
           <HouseCharacters setTitle={setTitle} house='Slytherin' />
+        </Route>
+        <Route exact path='/quiz'>
+          <Quiz />
         </Route>
         <Route
           exact
