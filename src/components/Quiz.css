@@ -1,3 +1,10 @@
+.question-container {
+  height: 40vh;
+  width: 75vw;
+  position: absolute;
+  bottom: 10vh;
+}
+
 .question {
   width: 75vw;
   height: 20vh;
@@ -5,15 +12,16 @@
   margin-bottom: 2vh;
   padding: 2vh;
   font-size: 10vh;
+  bottom: 2vh;
 }
 
 .answers {
   width: 75vw;
-  background-color: #bebf89;
   height: 150px;
-  display: inline-block;
+  position: absolute;
 }
 .answer {
+  background-color: #bebf89;
   width: 47%;
   height: 47%;
   border: 1px solid black;

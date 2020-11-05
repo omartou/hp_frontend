@@ -84,21 +84,23 @@ const Quiz = () => {
           <p>Lives : {lives}</p>
           <p>Score : {score}</p>
         </div>
-        <div className='question' id='question'>
-          {randomCharacter ? <div>{randomCharacter.name}</div> : <div></div>}
-        </div>
-        <div className='answers'>
-          <div className='answer' onClick={markAnswer} id='Gryffindor'>
-            Gryffindor
+        <div className="question-container">
+          <div className='question' id='question'>
+            {randomCharacter ? <div>{randomCharacter.name}</div> : <div></div>}
           </div>
-          <div className='answer' onClick={markAnswer} id='Hufflepuff'>
-            Hufflepuff
-          </div>
-          <div className='answer' onClick={markAnswer} id='Slytherin'>
-            Slytherin
-          </div>
-          <div className='answer' onClick={markAnswer} id='Ravenclaw'>
-            Ravenclaw
+          <div className='answers'>
+            <div className='answer' onClick={markAnswer} id='Gryffindor'>
+              Gryffindor
+            </div>
+            <div className='answer' onClick={markAnswer} id='Hufflepuff'>
+              Hufflepuff
+            </div>
+            <div className='answer' onClick={markAnswer} id='Slytherin'>
+              Slytherin
+            </div>
+            <div className='answer' onClick={markAnswer} id='Ravenclaw'>
+              Ravenclaw
+            </div>
           </div>
         </div>
       </Content>
