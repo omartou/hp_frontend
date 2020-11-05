@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Quiz.css';
-import Content from '../styled_components/Content'
+import Content from '../styled_components/Content';
 
 const Quiz = () => {
   const [randomCharacter, setRandomCharacter] = useState({});
@@ -16,7 +16,6 @@ const Quiz = () => {
     if (lives !== 0) {
       reset();
     }
-
   }, [score, lives]);
 
   const markAnswer = (e) => {
@@ -39,7 +38,7 @@ const Quiz = () => {
         document.getElementById('question').className = 'question wrong';
         decreaseLives();
       }
-    }, 3000);
+    }, 2000);
   };
 
   const decreaseLives = () => {
@@ -55,11 +54,11 @@ const Quiz = () => {
   };
 
   const removeOnClicks = () => {
-    let answers = document.querySelectorAll(".answer");
+    let answers = document.querySelectorAll('.answer');
     for (let answer of answers) {
       answer.className = 'answer disabled';
     }
-  }
+  };
 
   const reset = () => {
     document.getElementById('question').className = 'question';
@@ -69,22 +68,32 @@ const Quiz = () => {
     }
   };
 
-  if(lives === 0) {
-      return (<Content className="grid-container">
-        <div>Game Over</div>
-      <div>Your score is {score}!</div>
-      <div onClick={() => {setLives(3); setScore(0)}}>Try again</div>
-      </Content>)
+  if (lives === 0) {
+    return (
+      <Content className='grid-container'>
+        <h1>Game Over</h1>
+        <div className='task'>Your score is {score}!</div>
+        <div
+          className='answer'
+          onClick={() => {
+            setLives(3);
+            setScore(0);
+          }}
+        >
+          Try again
+        </div>
+      </Content>
+    );
   } else {
     return (
       <Content className='grid-container'>
-        <h1>HouseQuiz</h1>
-        <div>
-          <p>Guess which house the character is in!</p>
-          <p>Lives : {lives}</p>
-          <p>Score : {score}</p>
-        </div>
-        <div className="question-container">
+        <div className='question-container'>
+          <h1>HouseQuiz</h1>
+          <div className='task'>Guess which house the character is in!</div>
+          <div className='info'>
+            <div className='lives'>Lives : {lives}</div>
+            <div className='score'>Score : {score}</div>
+          </div>
           <div className='question' id='question'>
             {randomCharacter ? <div>{randomCharacter.name}</div> : <div></div>}
           </div>
@@ -104,8 +113,7 @@ const Quiz = () => {
           </div>
         </div>
       </Content>
-    ); 
+    );
   }
-
 };
 export default Quiz;

@@ -1,18 +1,21 @@
 .question-container {
-  height: 40vh;
+  height: 70vh;
   width: 75vw;
   position: absolute;
   bottom: 10vh;
 }
 
 .question {
+  box-shadow: #2f2419 5px 5px 5px;
+  border: 2px solid black;
+  border-radius: 50px;
   width: 75vw;
   height: 20vh;
-  border: 1px black solid;
   margin-bottom: 2vh;
-  padding: 2vh;
+  padding: 4vh;
   font-size: 10vh;
   bottom: 2vh;
+  background-color: #bebf89;
 }
 
 .answers {
@@ -21,15 +24,23 @@
   position: absolute;
 }
 .answer {
+  box-shadow: #2f2419 5px 5px 5px;
+  border-radius: 50px;
+  font-size: 3vh;
   background-color: #bebf89;
   width: 47%;
   height: 47%;
-  border: 1px solid black;
+  border: 2px solid black;
   display: inline-block;
-  padding: 25px;
+  padding: 2vh;
   margin-left: 1vw;
   margin-right: 1vw;
   margin-bottom: 2vh;
+}
+
+.answer:hover {
+  background: #bfa58a;
+  color: white;
 }
 
 .answer:hover {
@@ -52,4 +63,33 @@
 
 .disabled {
   pointer-events: none;
+}
+
+h1 {
+  width: 75vw;
+  font-size: 60px;
+}
+
+.task {
+  width: 75vw;
+  height: 10vh;
+  padding: 20px;
+  font-size: 40px;
+}
+
+.info {
+  font-size: 3vh;
+  padding: 5px;
+  display: flex;
+  width: 75vw;
+  height: 5vh;
+}
+
+.lives {
+  position: absolute;
+  left: 2vw;
+}
+.score {
+  position: absolute;
+  right: 2vw;
 }
