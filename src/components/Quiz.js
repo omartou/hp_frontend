@@ -4,10 +4,14 @@ import axios from 'axios';
 import './Quiz.css';
 import Content from '../styled_components/Content';
 
-const Quiz = () => {
+const Quiz = (props) => {
   const [randomCharacter, setRandomCharacter] = useState({});
   const [lives, setLives] = useState(3);
   const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    props.setTitle('House quiz');
+  }, [props]);
 
   useEffect(() => {
     axios

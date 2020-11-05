@@ -48,7 +48,7 @@ const App = (props) => {
           <HouseCharacters setTitle={setTitle} house='Slytherin' />
         </Route>
         <Route exact path='/quiz'>
-          <Quiz />
+          <Quiz setTitle={setTitle} />
         </Route>
         <Route
           exact
