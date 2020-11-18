@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import Logo from './Logo';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.div`
   position: absolute;
@@ -38,35 +38,39 @@ const StyleDiv = styled.div`
 export default function Navbar({ title }) {
   return (
     <StyledNavbar>
-      <div style={{ width: '100%', textAlign: 'center', display: 'flex' }}>
+      <div style={{ width: "100%", textAlign: "center", display: "flex" }}>
         <StyleDiv
           style={{
-            float: 'left',
-            textAlign: 'Left',
-            verticalAlign: 'middle',
-            width: '40vw',
+            float: "left",
+            textAlign: "Left",
+            verticalAlign: "middle",
+            width: "40vw",
           }}
         >
           {title}
         </StyleDiv>
         <StyleDiv
           style={{
-            float: 'center',
-            width: '20vw',
-            verticalAlign: 'text-top',
-            opacity: '100%',
+            float: "center",
+            width: "20vw",
+            verticalAlign: "text-top",
+            opacity: "100%",
           }}
         >
           <Logo />
         </StyleDiv>
-        <StyleDiv style={{ float: 'right', textAlign: 'right', width: '40vw' }}>
-          <StyledLink to='/hogwarts'>Hogwarts</StyledLink>
+        <StyleDiv style={{ float: "right", textAlign: "right", width: "40vw" }}>
+          <StyledLink to="/login">Login</StyledLink>
           <br />
-          <StyledLink to='/other'>Other Characters</StyledLink>
+          <StyledLink to="/registration">Registration</StyledLink>
           <br />
-          <StyledLink to='/ministry'>Ministry of Magic</StyledLink>
+          <StyledLink to="/hogwarts">Hogwarts</StyledLink>
           <br />
-          <StyledLink to='/quiz'>House Quiz</StyledLink>
+          <StyledLink to="/other">Other Characters</StyledLink>
+          <br />
+          <StyledLink to="/ministry">Ministry of Magic</StyledLink>
+          <br />
+          <StyledLink to="/quiz">House Quiz</StyledLink>
           <br />
         </StyleDiv>
       </div>
