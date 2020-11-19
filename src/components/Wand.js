@@ -27,6 +27,11 @@ const jumpWand = (e) => {
   }
 };
 
+const chooseWand = (e) => {
+  alert('Wand chosen!');
+  window.location = '/';
+};
+
 export default function Wand(props) {
   useEffect(() => {
     props.setTitle('Wands');
@@ -38,7 +43,7 @@ export default function Wand(props) {
       <WandContainerMid className='wandmid'>
         <HPWand onClick={jumpWand} src={harry} draggable={false} />
         <HPWand onClick={jumpWand} src={hermione} draggable={false} />
-        <HPWand onClick={jumpWand} src={voldemort} draggable={false} />
+        <HPWand onClick={chooseWand} src={voldemort} draggable={false} />
         <HPWand onClick={jumpWand} src={draco} draggable={false} />
       </WandContainerMid>
       <WandContainerRight className='wandright'></WandContainerRight>
