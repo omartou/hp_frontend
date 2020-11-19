@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const WandContainer = styled.div`
   position: absolute;
@@ -10,15 +10,15 @@ export const WandContainer = styled.div`
 
 export const WandContainerLeft = styled.div`
   width: 33vw;
-  display: flex;
+  display: inline-block;
 `;
 
 export const WandContainerMid = styled.div`
   width: 34vw;
-  display: flex;
+  display: inline-block;
 `;
 
 export const WandContainerRight = styled.div`
   width: 33vw;
-  display: flex;
+  display: inline-block;
 `;
