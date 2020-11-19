@@ -43,3 +43,13 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.nextButton {
+  position: absolute;
+  text-decoration: none;
+  width: auto;
+  right: 15vw;
+  bottom: 8vh;
+  font-size: 40px;
+  color: brown;
+}

@@ -72,7 +72,7 @@ export default function Navbar({ title }) {
           <br />
           <StyledLink to="/quiz">House Quiz</StyledLink>
           <br />
-          <StyledLink to="/wands">Wands</StyledLink>
+          <StyledLink to="/hat">Setup Profile</StyledLink>
         </StyleDiv>
       </div>
     </StyledNavbar>
