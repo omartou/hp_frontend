@@ -11,8 +11,9 @@ import OtherCharacters from "./components/OtherCharacters";
 import HogwartsPage from "./components/HogwartsPage";
 import Navbar from "./components/Navbar";
 import Quiz from "./components/Quiz";
-import LoginForm from "./components/LoginForm";
+import LoginPage from "./components/LoginPage";
 import Registration from "./components/Registration";
+import Wand from "./components/Wand";
 
 const App = (props) => {
   const [title, setTitle] = useState([]);
@@ -53,10 +54,13 @@ const App = (props) => {
           <Quiz setTitle={setTitle} />
         </Route>
         <Route exact path="/login">
-          <LoginForm />
+          <LoginPage />
         </Route>
         <Route exact path="/registration">
           <Registration />
+        </Route>
+        <Route exact path="/wands">
+          <Wand setTitle={setTitle} />
         </Route>
         <Route
           exact

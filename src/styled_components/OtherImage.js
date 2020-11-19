@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import hogwarts from '../images/dursley.png';
+import hogwarts from "../images/dursley.png";
 
 const HogwartsImage = styled(Link)`
   background-image: url(${hogwarts});
@@ -18,6 +18,6 @@ const HogwartsImage = styled(Link)`
     filter: sepia(0%) saturate(170%);
     transition: 2000ms;
   }
-`
+`;
 
 export default HogwartsImage;
