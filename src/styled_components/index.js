@@ -6,6 +6,10 @@ import Card from "../styled_components/Card";
 import { NameOnCard } from "../styled_components/NameOnCard";
 import { NameOnCardDetails } from "../styled_components/NameOnCard";
 import CardDetails from "../styled_components/CardDetails";
+import HarryWand from "../styled_components/HarryWand";
+import HermioneWand from "../styled_components/HermioneWand";
+import VoldemortWand from "../styled_components/VoldemortWand";
+import DracoWand from "../styled_components/DracoWand";
 
 export {
   MinistryImage,
@@ -15,5 +19,9 @@ export {
   NameOnCard,
   CardDetails,
   NameOnCardDetails,
-  OtherImage
+  OtherImage,
+  HarryWand,
+  HermioneWand,
+  VoldemortWand,
+  DracoWand,
 };

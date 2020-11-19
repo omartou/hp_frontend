@@ -2,7 +2,7 @@ import React from "react";
 import Content from "../styled_components/Content";
 import { Link } from "react-router-dom";
 
-function Login(Login, error) {
+export default function LoginPage() {
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -32,5 +32,3 @@ function Login(Login, error) {
     </Content>
   );
 }
-
-export default Login;
