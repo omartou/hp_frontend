@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Content from "../styled_components/Content";
 import { Link } from "react-router-dom";
 
-function Registration() {
+function Registration(props) {
   const submitHandler = (e) => {
     e.preventDefault();
   };
+
+  useEffect(() => {
+    props.setTitle("Registration");
+  }, [props]);
   return (
     <Content>
       <form onSubmit={submitHandler}>

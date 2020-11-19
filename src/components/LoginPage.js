@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Content from "../styled_components/Content";
 import { Link } from "react-router-dom";
 
-export default function LoginPage() {
+export default function LoginPage(props) {
   const submitHandler = (e) => {
     e.preventDefault();
   };
+
+  useEffect(() => {
+    props.setTitle("Login");
+  }, [props]);
 
   return (
     <Content>
