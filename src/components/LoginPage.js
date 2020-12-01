@@ -16,7 +16,7 @@ export default function LoginPage(props) {
         password: password,
       })
       .then((res) => {
-        if (res.data === "You logged in successfully!") {
+        if (res.data === "Login successful!") {
           setLoggedIn(true);
         }
         console.log(res.data);
@@ -47,7 +47,7 @@ export default function LoginPage(props) {
               <input type="password" name="password" id="password" />
               <br />
             </div>
-            <button type="submit" value="Login" />
+            <button type="submit">Login</button>
           </div>
         </form>
       </Content>
