@@ -5,11 +5,11 @@ import Datafetcher from '../service/Datafetcher';
 
 const MinistryCharacters = (props) => {
   const [ministryCharacters, setMinistryCharacters] = useState([]);
+  const dataFetcher = new Datafetcher();
 
   useEffect(() => {
     props.setTitle('Ministry');
-    const dataFetcher = new Datafetcher();
-    dataFetcher.fetchWithTokenHeader(
+    dataFetcher.fetch(
       'http://localhost:8080/ministry',
       setMinistryCharacters
     );

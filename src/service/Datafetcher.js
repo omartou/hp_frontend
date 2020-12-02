@@ -10,6 +10,10 @@ class Datafetcher {
     };
   }
 
+  fetch(url, callback) {
+    axios.get(url).then((res) => callback(res.data));
+  }
+
   fetchWithTokenHeader(url, callback) {
     axios.get(url, this.tokenHeader).then((res) => callback(res.data));
   }
