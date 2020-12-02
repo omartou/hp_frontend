@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from "react";
 import Content from "../styled_components/Content";
 import { Redirect } from "react-router-dom";
-import axios from "axios";
+import Datafetcher from "../service/Datafetcher";
 
 export default function LoginPage(props) {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [authorization, setAuthorization] = useState({});
+  const datafetcher = new Datafetcher();
 
   const submitHandler = (e) => {
     e.preventDefault();
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    axios
-      .post("http://localhost:8080/login", {
+
+    datafetcher.fetchForLogin(
+      "http://localhost:8080/login",
+      {
         username: username,
         password: password,
-      })
-      .then((res) => {
-        if (res.data === "Login successful!") {
-          setLoggedIn(true);
-        }
-        console.log(res.data);
-      });
+      },
+      setAuthorization
+    );
   };
 
   useEffect(() => {
     props.setTitle("Login");
   }, [props]);
 
-  if (isLoggedIn) {
+  if (authorization.status === "Login successful!") {
+    console.log("Muhaha... we have token: " + authorization.token);
+    document.cookie = `token=${authorization.token}`;
     return <Redirect to="/" />;
   } else {
     return (

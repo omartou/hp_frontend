@@ -1,26 +1,26 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import './Quiz.css';
 import Content from '../styled_components/Content';
+import Datafetcher from "../service/Datafetcher";
 
 const Quiz = (props) => {
   const [randomCharacter, setRandomCharacter] = useState({});
+  const dataFetcher = new Datafetcher();
   const [lives, setLives] = useState(3);
   const [score, setScore] = useState(0);
 
-  useEffect(() => {
-    props.setTitle('House quiz');
-  }, [props]);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:8080/quiz/house/random')
-      .then((res) => setRandomCharacter(res.data));
+    dataFetcher.fetch("http://localhost:8080/quiz/house/random", setRandomCharacter);
     if (lives !== 0) {
       reset();
     }
   }, [score, lives]);
+
+  useEffect(() => {
+    props.setTitle('House quiz');
+  }, [props]);
 
   const markAnswer = (e) => {
     removeOnClicks();

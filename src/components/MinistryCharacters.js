@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Character from "./Character";
 import Content from "../styled_components/Content";
-import axios from "axios";
+import Datafetcher from "../service/Datafetcher";
 
 const MinistryCharacters = (props) => {
   const [ministryCharacters, setMinistryCharacters] = useState([]);
+  const dataFetcher = new Datafetcher();
 
   useEffect(() => {
     props.setTitle("Ministry");
-    axios
-      .get("http://localhost:8080/ministry")
-      .then((res) => setMinistryCharacters(res.data));
+    dataFetcher.fetch("http://localhost:8080/ministry", setMinistryCharacters);
   }, [props]);
 
   return (
