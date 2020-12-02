@@ -5,11 +5,16 @@ import axios from "axios";
 
 const MinistryCharacters = (props) => {
   const [ministryCharacters, setMinistryCharacters] = useState([]);
+  const token = document.cookie.split("=")[1] === "" ? "" : document.cookie.split("=")[1];
+  
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
 
   useEffect(() => {
     props.setTitle("Ministry");
     axios
-      .get("http://localhost:8080/ministry")
+      .get("http://localhost:8080/ministry", config)
       .then((res) => setMinistryCharacters(res.data));
   }, [props]);
 
