@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CardDetails, NameOnCardDetails } from '../styled_components/index';
 import Content from '../styled_components/Content';
-// import axios from 'axios';
 import Datafetcher from '../service/Datafetcher';
 
 const Details = (props) => {
@@ -15,7 +14,7 @@ const Details = (props) => {
     );
   }, [props]);
 
-  if (characterDetails && characterDetails != "denied") {
+  if (characterDetails && characterDetails !== "denied") {
     return (
       <Content className='character-details'>
         <CardDetails>

@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Character from "./Character";
 import Content from "../styled_components/Content";
-import axios from "axios";
+import Datafetcher from "../service/Datafetcher";
 
 const OtherCharacters = (props) => {
   const [otherCharacters, setOtherCharacters] = useState([]);
+  const dataFetcher = new Datafetcher();
 
   useEffect(() => {
     props.setTitle("Other characters");
-    axios
-      .get("http://localhost:8080/other")
-      .then((res) => setOtherCharacters(res.data));
+    dataFetcher.fetch("http://localhost:8080/other", setOtherCharacters);
   }, [props]);
 
   return (

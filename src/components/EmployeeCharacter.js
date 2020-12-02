@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Character from './Character';
 import Content from '../styled_components/Content';
-import axios from 'axios';
+import Datafetcher from "../service/Datafetcher";
 
 const EmployeeCharacters = (props) => {
   const [characters, setCharacters] = useState([]);
+  const dataFetcher = new Datafetcher();
 
   useEffect(() => {
-    props.setTitle('Employees');
-    axios
-      .get('http://localhost:8080/hogwarts/employees')
-      .then((res) => setCharacters(res.data));
+    props.setTitle("Employees");
+    dataFetcher.fetch("http://localhost:8080/hogwarts/employees", setCharacters);
   }, [props]);
 
   return (

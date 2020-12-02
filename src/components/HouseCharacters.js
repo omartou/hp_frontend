@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Character from "./Character";
 import Content from "../styled_components/Content";
-import axios from "axios";
+import Datafetcher from "../service/Datafetcher";
+
 
 const HouseCharacters = (props) => {
   const [houseCharacters, setHouseCharacters] = useState([]);
+  const dataFetcher = new Datafetcher();
 
   useEffect(() => {
     props.setTitle(props.house);
-    axios
-      .get(`http://localhost:8080/hogwarts/houses/${props.house}`)
-      .then((res) => setHouseCharacters(res.data));
+    dataFetcher.fetch(`http://localhost:8080/hogwarts/houses/${props.house}`, setHouseCharacters);
   }, [props]);
 
   return (

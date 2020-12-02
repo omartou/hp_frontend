@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Content from "../styled_components/Content";
 import { Redirect } from "react-router-dom";
-import axios from "axios";
 import Datafetcher from "../service/Datafetcher";
 
 export default function LoginPage(props) {
