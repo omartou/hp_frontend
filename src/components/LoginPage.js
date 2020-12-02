@@ -2,23 +2,25 @@ import React, { useEffect, useState } from "react";
 import Content from "../styled_components/Content";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import Datafetcher from "../service/Datafetcher";
 
 export default function LoginPage(props) {
   const [authorization, setAuthorization] = useState({});
+  const datafetcher = new Datafetcher();
 
   const submitHandler = (e) => {
     e.preventDefault();
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    axios
-      .post("http://localhost:8080/login", {
+
+    datafetcher.fetchForLogin(
+      "http://localhost:8080/login",
+      {
         username: username,
         password: password,
-      })
-      .then((res) => {
-        setAuthorization(res.data)
-        console.log(res.data.status);
-      });
+      },
+      setAuthorization
+    );
   };
 
   useEffect(() => {
