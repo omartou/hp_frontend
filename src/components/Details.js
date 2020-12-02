@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { CardDetails, NameOnCardDetails } from '../styled_components/index';
 import Content from '../styled_components/Content';
-import axios from 'axios';
+// import axios from 'axios';
+import Datafetcher from '../service/Datafetcher';
 
 const Details = (props) => {
-  const [characterDetails, setCharacterDetails] = useState({});
+  const [characterDetails, setCharacterDetails] = useState();
+  const dataFetcher = new Datafetcher();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/character/${props.match.params.id}`)
-      .then((res) => setCharacterDetails(res.data));
+    dataFetcher.fetchWithTokenHeader(
+      `http://localhost:8080/character/${props.match.params.id}`,
+      setCharacterDetails
+    );
   }, [props]);
 
-  if (characterDetails) {
+  if (characterDetails && characterDetails != "denied") {
     return (
       <Content className='character-details'>
         <CardDetails>
@@ -78,8 +81,16 @@ const Details = (props) => {
         </CardDetails>
       </Content>
     );
+  } else if (characterDetails=== "denied") {
+    return ( 
+    <Content>
+      <div>
+        <h1>You should login to see this information!</h1>
+        </div>
+    </Content>
+    );
   } else {
-    return <div></div>;
+    return <div></div>
   }
 };
 export default Details;

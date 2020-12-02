@@ -15,7 +15,10 @@ class Datafetcher {
   }
 
   fetchWithTokenHeader(url, callback) {
-    axios.get(url, this.tokenHeader).then((res) => callback(res.data));
+    axios.get(url, this.tokenHeader)
+    .then((res) => callback(res.data)).catch((e) => callback("denied"));
   }
 }
+
+
 export default Datafetcher;
