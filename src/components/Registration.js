@@ -5,7 +5,8 @@ import { useState } from "react";
 import Datafetcher from "../service/Datafetcher";
 
 const Registration = (props) => {
-  const [isSignedUp, setSignedUp] = useState(false);
+  // const [isSignedUp, setSignedUp] = useState(false);
+  const [registrationStatus, setRegistrationStatus] = useState({});
   const dataFetcher = new Datafetcher();
 
   const submitHandler = (e) => {
@@ -21,12 +22,16 @@ const Registration = (props) => {
         email: email,
         password: password,
       },
-      setSignedUp
+      // setSignedUp
+      setRegistrationStatus
     );
   };
-  if (isSignedUp) {
+  // if (isSignedUp) {
+  if (registrationStatus.status === "Registration successful!") {
+    console.log(registrationStatus.status);
     return <Redirect to="/login" />;
   } else {
+    console.log(registrationStatus.status);
     return (
       <Content>
         <form onSubmit={submitHandler}>
