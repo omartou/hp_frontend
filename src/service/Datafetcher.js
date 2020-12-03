@@ -30,9 +30,23 @@ class Datafetcher {
   editCharacter(url, userDataObject) {
     let object = {
       headers: { Authorization: `Bearer ${this.token}` },
-      body: `${userDataObject}`
+      name : `${userDataObject.name}}`,
+      alias : `${userDataObject.alias}`,
+      boggart : `${userDataObject.boggart}`,
+      patronus : `${userDataObject.patronus}`,
+      role : `${userDataObject.role}`,
+      wand : `${userDataObject.wand}`,
+      house : `${userDataObject.house}`,
+      bloodStatus : `${userDataObject.bloodStatus}`,
+      species : `${userDataObject.species}`,
+      animagus : `${userDataObject.animagus}`,
+      school : `${userDataObject.school}`,
+      dumbledoresArmy : `${userDataObject.dumbledoresArmy}`,
+      deathEater : `${userDataObject.deathEater}`,
+      orderOfThePhoenix : `${userDataObject.orderOfThePhoenix}`,
+      ministryOfMagic : `${userDataObject.ministryOfMagic}`,
     }
-    axios.put(url, object)
+    axios.put(url, object).then((res) => console.log("xd"))
   }
 }
 

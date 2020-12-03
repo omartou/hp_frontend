@@ -85,6 +85,8 @@ export default function CharacterEdit(props) {
         setMinistryOfMagic(event.target.value);
     }
     
+    let token =
+      document.cookie.split("=")[1] === "" ? "" : document.cookie.split("=")[1];
     function submitHandler(event) {
         event.preventDefault();
         let object = {
@@ -104,8 +106,7 @@ export default function CharacterEdit(props) {
             orderOfThePhoenix : `${event.target[15].checked}`,
             ministryOfMagic : `${event.target[16].checked}`,
         };
-        console.log(object)
-        dataFetcher.editCharacter(`http://localhost:8080/character/${props.match.params.id}/edit`, object);
+        dataFetcher.editCharacter(`http://localhost:8080/character/${props.match.params.id}`, object);
 
     }
     if (characterDetails && characterDetails !== "denied") {
