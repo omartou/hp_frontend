@@ -15,18 +15,15 @@ class Datafetcher {
   }
 
   fetchWithTokenHeader(url, callback) {
-    axios.get(url, this.tokenHeader)
-    .then((res) => callback(res.data)).catch((e) => callback("denied"));
+    axios
+      .get(url, this.tokenHeader)
+      .then((res) => callback(res.data))
+      .catch((e) => callback("denied"));
   }
 
-  fetchForRegistration(url, userDataObject, callback) {
-    axios.post(url, userDataObject).then((res) => callback(res.data));
-  }
-
-  fetchForLogin(url, userDataObject, callback) {
+  fetchForLoginAndRegistration(url, userDataObject, callback) {
     axios.post(url, userDataObject).then((res) => callback(res.data));
   }
 }
-
 
 export default Datafetcher;
