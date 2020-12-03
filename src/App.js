@@ -15,6 +15,7 @@ import LoginPage from "./components/LoginPage";
 import Registration from "./components/Registration";
 import Wand from "./components/Wand";
 import SortingHat from "./components/SortingHat";
+import CharacterEdit from "./components/CharacterEdit";
 
 const App = (props) => {
   const [title, setTitle] = useState([]);
@@ -70,6 +71,12 @@ const App = (props) => {
           exact
           path="/character/:id"
           component={Details}
+          setTitle={setTitle}
+        ></Route>
+        <Route
+          exact
+          path="/character/:id/edit"
+          component={CharacterEdit}
           setTitle={setTitle}
         ></Route>
       </div>

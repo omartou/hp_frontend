@@ -26,6 +26,14 @@ class Datafetcher {
   fetchForLogin(url, userDataObject, callback) {
     axios.post(url, userDataObject).then((res) => callback(res.data));
   }
+
+  editCharacter(url, userDataObject) {
+    let object = {
+      headers: { Authorization: `Bearer ${this.token}` },
+      body: `${userDataObject}`
+    }
+    axios.put(url, object)
+  }
 }
 
 
