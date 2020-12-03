@@ -14,7 +14,7 @@ const Registration = (props) => {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
-    dataFetcher.fetchForRegistration(
+    dataFetcher.fetchForLoginAndRegistration(
       "http://localhost:8080/register",
       {
         username: username,
