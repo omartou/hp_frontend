@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Character from './Character';
-import Content from '../styled_components/Content';
+import React, { useEffect, useState } from "react";
+import Character from "./Character";
+import Content from "../styled_components/Content";
 import Datafetcher from "../service/Datafetcher";
 
 const EmployeeCharacters = (props) => {
@@ -9,12 +9,15 @@ const EmployeeCharacters = (props) => {
 
   useEffect(() => {
     props.setTitle("Employees");
-    dataFetcher.fetch("http://localhost:8080/hogwarts/employees", setCharacters);
+    dataFetcher.fetch(
+      "http://localhost:8080/hogwarts/employees",
+      setCharacters
+    );
   }, [props]);
 
   return (
     <Content>
-      <div className='grid-container'>
+      <div className="grid-container">
         {characters.map((character) => {
           return (
             <Character

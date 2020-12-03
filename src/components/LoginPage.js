@@ -12,7 +12,7 @@ export default function LoginPage(props) {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    datafetcher.fetchForLogin(
+    datafetcher.fetchForLoginAndRegistration(
       "http://localhost:8080/login",
       {
         username: username,

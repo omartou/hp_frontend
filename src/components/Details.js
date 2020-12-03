@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { CardDetails, NameOnCardDetails } from '../styled_components/index';
-import Content from '../styled_components/Content';
-import Datafetcher from '../service/Datafetcher';
+import React, { useState, useEffect } from "react";
+import { CardDetails, NameOnCardDetails } from "../styled_components/index";
+import Content from "../styled_components/Content";
+import Datafetcher from "../service/Datafetcher";
 
 const Details = (props) => {
   const [characterDetails, setCharacterDetails] = useState();
@@ -16,7 +16,7 @@ const Details = (props) => {
 
   if (characterDetails && characterDetails !== "denied") {
     return (
-      <Content className='character-details'>
+      <Content className="character-details">
         <CardDetails>
           <NameOnCardDetails>{characterDetails.name}</NameOnCardDetails>
           {characterDetails.alias ? (
@@ -29,7 +29,7 @@ const Details = (props) => {
             <strong>Species: </strong>
             {characterDetails.species}
           </p>
-          {characterDetails.bloodStatus === 'unknown' ? null : (
+          {characterDetails.bloodStatus === "unknown" ? null : (
             <p>
               <strong>Blood type: </strong>
               {characterDetails.bloodStatus}
@@ -80,16 +80,16 @@ const Details = (props) => {
         </CardDetails>
       </Content>
     );
-  } else if (characterDetails=== "denied") {
-    return ( 
-    <Content>
-      <div>
-        <h1>You should login to see this information!</h1>
+  } else if (characterDetails === "denied") {
+    return (
+      <Content>
+        <div>
+          <h1>You should login to see this information!</h1>
         </div>
-    </Content>
+      </Content>
     );
   } else {
-    return <div></div>
+    return <div></div>;
   }
 };
 export default Details;
