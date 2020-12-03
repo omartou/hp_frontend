@@ -15,6 +15,7 @@ import LoginPage from "./components/LoginPage";
 import Registration from "./components/Registration";
 import Wand from "./components/Wand";
 import SortingHat from "./components/SortingHat";
+import Logout from "./components/Logout";
 
 const App = (props) => {
   const [title, setTitle] = useState([]);
@@ -59,6 +60,9 @@ const App = (props) => {
         </Route>
         <Route exact path="/registration">
           <Registration setTitle={setTitle} />
+        </Route>
+        <Route exact path="/logout">
+          <Logout />
         </Route>
         <Route exact path="/wands">
           <Wand setTitle={setTitle} />

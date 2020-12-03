@@ -60,9 +60,17 @@ export default function Navbar({ title }) {
           <Logo />
         </StyleDiv>
         <StyleDiv style={{ float: "right", textAlign: "right", width: "40vw" }}>
-          <StyledLink to="/login">Login</StyledLink>
+          {document.cookie === "" ? (
+            <StyledLink to="/login">Login</StyledLink>
+          ) : (
+            <StyledLink to="/">Welcome to Harry Potter Api</StyledLink>
+          )}
           <br />
-          <StyledLink to="/registration">Registration</StyledLink>
+          {document.cookie === "" ? (
+            <StyledLink to="/registration">Registration</StyledLink>
+          ) : (
+            <StyledLink to="/logout">Logout</StyledLink>
+          )}
           <br />
           <StyledLink to="/hogwarts">Hogwarts</StyledLink>
           <br />
@@ -72,7 +80,9 @@ export default function Navbar({ title }) {
           <br />
           <StyledLink to="/quiz">House Quiz</StyledLink>
           <br />
-          <StyledLink to="/hat">Setup Profile</StyledLink>
+          {document.cookie !== "" ? (
+            <StyledLink to="/hat">Setup Profile</StyledLink>
+          ) : null}
         </StyleDiv>
       </div>
     </StyledNavbar>
