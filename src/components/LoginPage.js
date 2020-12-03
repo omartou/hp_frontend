@@ -27,10 +27,12 @@ export default function LoginPage(props) {
   }, [props]);
 
   if (authorization.status === "Login successful!") {
-    console.log("Muhaha... we have token: " + authorization.token);
+    // console.log("Muhaha... we have token: " + authorization.token);
+    console.log(authorization.status);
     document.cookie = `token=${authorization.token}`;
     return <Redirect to="/" />;
   } else {
+    console.log(authorization.status);
     return (
       <Content>
         <form onSubmit={submitHandler}>
