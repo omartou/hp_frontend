@@ -5,7 +5,6 @@ import { useState } from "react";
 import Datafetcher from "../service/Datafetcher";
 
 const Registration = (props) => {
-  // const [isSignedUp, setSignedUp] = useState(false);
   const [registrationStatus, setRegistrationStatus] = useState({});
   const dataFetcher = new Datafetcher();
 
@@ -22,11 +21,9 @@ const Registration = (props) => {
         email: email,
         password: password,
       },
-      // setSignedUp
       setRegistrationStatus
     );
   };
-  // if (isSignedUp) {
   if (registrationStatus.status === "Registration successful!") {
     console.log(registrationStatus.status);
     return <Redirect to="/login" />;

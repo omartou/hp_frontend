@@ -20,7 +20,6 @@ class Datafetcher {
   }
 
   fetchForRegistration(url, userDataObject, callback) {
-    // axios.post(url, userDataObject).then((res) => callback(true));
     axios.post(url, userDataObject).then((res) => callback(res.data));
   }
 
