@@ -28,7 +28,7 @@ class Datafetcher {
   editCharacter(url, userDataObject) {
     let object = {
       headers: { Authorization: `Bearer ${this.token}` },
-      name : `${userDataObject.name}}`,
+      name : `${userDataObject.name}`,
       alias : `${userDataObject.alias}`,
       boggart : `${userDataObject.boggart}`,
       patronus : `${userDataObject.patronus}`,

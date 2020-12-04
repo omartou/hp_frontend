@@ -12,4 +12,10 @@ const EditLabel = styled("label")`
 
 `;
 
-export {EditInput, EditSelect, EditLabel};
+const DetailsDiv = styled.div`
+padding-top: 180px;
+text-align: initial;
+display: inline-block;
+`
+
+export {EditInput, EditSelect, EditLabel, DetailsDiv};
