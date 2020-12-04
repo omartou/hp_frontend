@@ -72,16 +72,16 @@ export default function CharacterEdit(props) {
         setSchool(event.target.value);
     }
     function handleChangeDumbledor(event) {
-        setDumledoresArmy(event.target.value);
+        setDumledoresArmy(event.target.checked);
     }
     function handleChangePhoenix(event) {
-        setOrderOfThePhoenix(event.target.value);
+        setOrderOfThePhoenix(event.target.checked);
     }
     function handleChangeDeathEater(event) {
-        setDeathEater(event.target.value);
+        setDeathEater(event.target.checked);
     }
     function handleChangeMinistry(event) {
-        setMinistryOfMagic(event.target.value);
+        setMinistryOfMagic(event.target.checked);
     }
     
     let token =
