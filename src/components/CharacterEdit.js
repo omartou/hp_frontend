@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Content from "../styled_components/Content";
-import {EditLabel, EditInput, EditSelect} from '../styled_components/CharacerEditComponents';
+import {EditLabel, DetailsDiv} from '../styled_components/CharacerEditComponents';
 import Datafetcher from '../service/Datafetcher';
 
 
@@ -116,132 +115,168 @@ export default function CharacterEdit(props) {
             wandParts = characterDetails.wand.split(", ")
         }
         return (
-            <Content>
+            <DetailsDiv>
             <form onSubmit={submitHandler}>
-                <EditLabel>Name</EditLabel>
-                <input type="text" id="name" name="name" defaultValue={characterDetails.name}></input>
-                <br></br>
-                <EditLabel>Alias</EditLabel>
-                <input type="text" id="alias" name="alias" defaultValue={characterDetails.alias}></input>
-                <br></br>
-                <EditLabel>Boggart</EditLabel>
-                <input type="text" id="boggart" name="boggart" defaultValue={characterDetails.boggart}></input>
-                <br></br>
-                <EditLabel>Patronus</EditLabel>
-                <input type="text" id="patronus" name="patrnous" defaultValue={characterDetails.patronus}></input>
-                <br></br>
-                <EditLabel>Role</EditLabel>
-                <input type="text" id="role" name="role" defaultValue={characterDetails.role}></input>
-                <br></br>
-                <EditLabel>Wand wood</EditLabel>
-                <input type="text" id="wandWood" name="wandWood" defaultValue={wandParts[0]}></input>
-                <br></br>
-                <EditLabel>Wand length</EditLabel>
-                <input type="text" id="wandLength" name="wandLength" defaultValue={wandParts[1]}></input>
-                <br></br>
-                <EditLabel>Wand core</EditLabel>
-                <select id="wandCore" name="wandCore" value={core} onChange={handleChangeCore}>
-                    <option value="Dragon heartstring">Dragon heartstring</option>
-                    <option value="Phoenix feather">Phoenix feather</option>
-                    <option value="Phoenix feather core">Phoenix feather core</option>
-                    <option value="Thestral tail hair">Thestral tail hair</option>
-                    <option value="Thestral tail hair core">Thestral tail hair core</option>
-                    <option value="Unicorn hair">Unicorn hair</option>
-                    <option value="Unicorn hair tail">Unicorn hair tail</option>
-                    <option value="Veela hair">Veela hair</option>
-                    <option value="unknown core">unknown core</option>
-                    <option value="">none/unknown</option>
-                </select><br></br>
-                <EditLabel>House</EditLabel>
-                <select id="house" name="house" value={house} onChange={handleChangeHouse}>
-                    <option value="Gryffindor">Gryffindor</option>
-                    <option value="Ravenclaw">Ravenclaw</option>
-                    <option value="Slytherin">Slytherin</option>
-                    <option value="Hufflepuff">Hufflepuff</option>
-                    <option value="">none</option>
-                </select>
-                <br></br>
-                <EditLabel>Blood</EditLabel>
-                <select id="bloodStatus" name="bloodStatus" value={blood} onChange={handleChangeBlood}>
-                    <option value="unknown">unknown</option>
-                    <option value="half-blood">half-blood</option>
-                    <option value="half-giant">half-giant</option>
-                    <option value="mugglen">muggle</option>
-                    <option value="muggle-born">muggle-born</option>
-                    <option value="pure-blood">pure-blood</option>
-                    <option value="quarter-villa">quarter-villa</option>
-                    <option value="squib">squib</option>
-                    <option value="">none</option>
-                </select>
-                <br></br>
-                <EditLabel>Species</EditLabel>
-                <select id="species" name="species" value={species} onChange={handleChangeSpecies}>
-                    <option value="acromantula">acromantula</option>
-                    <option value="Boarhound">Boarhound</option>
-                    <option value="cat">cat</option>
-                    <option value="centaur">centaur</option>
-                    <option value="ghost">ghost</option>
-                    <option value="giant">giant</option>
-                    <option value="goblin">goblin</option>
-                    <option value="Great Grey Owl">Great Grey Owl</option>
-                    <option value="half-giant">half-giant</option>
-                    <option value="hippogriff">hippogriff</option>
-                    <option value="horcrux">horcrux</option>
-                    <option value="house-elf">house-elf</option>
-                    <option value="human">human</option>
-                    <option value="human (metamorphmagus)">human (metamorphmagus)</option>
-                    <option value="Norwegian Ridgeback">Norwegian Ridgeback</option>
-                    <option value="part-goblin">part-goblin</option>
-                    <option value="part-human">part-human</option>
-                    <option value="phoenix">phoenix</option>
-                    <option value="poltergeist">poltergeist</option>
-                    <option value="portrait">portrait</option>
-                    <option value="scops owl">scops owl</option>
-                    <option value="Snowy Owl">Snowy Owl</option>
-                    <option value="three-headed dog">three-headed dog</option>
-                    <option value="toad">toad</option>
-                    <option value="werewolf">werewolf</option>
-                    <option value="">unknown</option>
-                </select>
-                <br></br>
-                <EditLabel>Animagus</EditLabel>
-                <select id="animagus" name="animagus" value={animagus} onChange={handleChangeAnimagus}>
-                    <option value="beetle">beetle</option>
-                    <option value="black dog">black dog</option>
-                    <option value="rat">rat</option>
-                    <option value="stag">stag</option>
-                    <option value="tabby cat">tabby cat</option>
-                    <option value="">none</option>
-                </select>
-                <br></br>
-                <EditLabel>School</EditLabel>
-                <select id="school" name="school" value={school} onChange={handleChangeSchool}>
-                    <option value="Beauxbatons Academy of Magic">Beauxbatons Academy of Magic</option>
-                    <option value="Durmstrang Institute">Durmstrang Institute</option>
-                    <option value="Hogwarts Academy of Witchcraft and Wizardry">Hogwarts Academy of Witchcraft and Wizardry</option>
-                    <option value="Hogwarts School of Witchcraft and Wizardry">Hogwarts School of Witchcraft and Wizardry</option>
-                    <option value="">none</option>
-                </select>
-                <br></br>
-
-                <EditLabel>Part of Dumbeldore's army</EditLabel>
-                <input type="checkbox" id="dumbledoresArmy" name="dumbledoresArmy" checked={dumbledoresArmy} onChange={handleChangeDumbledor}></input><br></br>
-                <EditLabel>Death Eater</EditLabel>
-                <input type="checkbox" id="deathEater" name="deathEater" checked={deathEater} onChange={handleChangeDeathEater}></input><br></br>
-                <EditLabel>Part of Order of the Phoenix</EditLabel>
-                <input type="checkbox" id="orderOfThePhoenix" name="orderOfThePhoenix" checked={orderOfThePhoenix} onChange={handleChangePhoenix}></input><br></br>
-                <EditLabel>Part of the Ministry of Magic</EditLabel>
-                <input type="checkbox" id="ministryOfMagic" name="ministryOfMagic" checked={ministryOfMagic} onChange={handleChangeMinistry}></input><br></br>
-                
+                <table>
+                <tbody>
+                    <tr>
+                        <td><EditLabel>Name</EditLabel></td>
+                        <td><input type="text" id="name" name="name" defaultValue={characterDetails.name}></input></td>
+                    </tr>
+                    <tr>
+                        <td><EditLabel>Alias</EditLabel></td>
+                        <td><input type="text" id="alias" name="alias" defaultValue={characterDetails.alias}></input></td>
+                    </tr>
+                    <tr>
+                        <td><EditLabel>Boggart</EditLabel></td>
+                        <td><input type="text" id="boggart" name="boggart" defaultValue={characterDetails.boggart}></input></td>
+                    </tr>                
+                    <tr>
+                        <td><EditLabel>Patronus</EditLabel></td>
+                        <td><input type="text" id="patronus" name="patrnous" defaultValue={characterDetails.patronus}></input></td>
+                    </tr>
+                    <tr>
+                        <td><EditLabel>Role</EditLabel></td>
+                        <td><input type="text" id="role" name="role" defaultValue={characterDetails.role}></input></td>
+                    </tr>
+                    <tr>
+                        <td><EditLabel>Wand wood</EditLabel></td>
+                        <td><input type="text" id="wandWood" name="wandWood" defaultValue={wandParts[0]}></input></td>
+                    </tr>
+                <tr>
+                    <td><EditLabel>Wand length</EditLabel></td>
+                    <td><input type="text" id="wandLength" name="wandLength" defaultValue={wandParts[1]}></input></td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Wand core</EditLabel></td>
+                    <td>
+                        <select id="wandCore" name="wandCore" value={core} onChange={handleChangeCore}>
+                            <option value="Dragon heartstring">Dragon heartstring</option>
+                            <option value="Phoenix feather">Phoenix feather</option>
+                            <option value="Phoenix feather core">Phoenix feather core</option>
+                            <option value="Thestral tail hair">Thestral tail hair</option>
+                            <option value="Thestral tail hair core">Thestral tail hair core</option>
+                            <option value="Unicorn hair">Unicorn hair</option>
+                            <option value="Unicorn hair tail">Unicorn hair tail</option>
+                            <option value="Veela hair">Veela hair</option>
+                            <option value="unknown core">unknown core</option>
+                            <option value="">none/unknown</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><EditLabel>House</EditLabel></td>
+                    <td>
+                        <select id="house" name="house" value={house} onChange={handleChangeHouse}>
+                            <option value="Gryffindor">Gryffindor</option>
+                            <option value="Ravenclaw">Ravenclaw</option>
+                            <option value="Slytherin">Slytherin</option>
+                            <option value="Hufflepuff">Hufflepuff</option>
+                            <option value="">none</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Blood</EditLabel></td>
+                    <td>
+                        <select id="bloodStatus" name="bloodStatus" value={blood} onChange={handleChangeBlood}>
+                            <option value="unknown">unknown</option>
+                            <option value="half-blood">half-blood</option>
+                            <option value="half-giant">half-giant</option>
+                            <option value="mugglen">muggle</option>
+                            <option value="muggle-born">muggle-born</option>
+                            <option value="pure-blood">pure-blood</option>
+                            <option value="quarter-villa">quarter-villa</option>
+                            <option value="squib">squib</option>
+                            <option value="">none</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Species</EditLabel></td>
+                    <td>
+                        <select id="species" name="species" value={species} onChange={handleChangeSpecies}>
+                            <option value="acromantula">acromantula</option>
+                            <option value="Boarhound">Boarhound</option>
+                            <option value="cat">cat</option>
+                            <option value="centaur">centaur</option>
+                            <option value="ghost">ghost</option>
+                            <option value="giant">giant</option>
+                            <option value="goblin">goblin</option>
+                            <option value="Great Grey Owl">Great Grey Owl</option>
+                            <option value="half-giant">half-giant</option>
+                            <option value="hippogriff">hippogriff</option>
+                            <option value="horcrux">horcrux</option>
+                            <option value="house-elf">house-elf</option>
+                            <option value="human">human</option>
+                            <option value="human (metamorphmagus)">human (metamorphmagus)</option>
+                            <option value="Norwegian Ridgeback">Norwegian Ridgeback</option>
+                            <option value="part-goblin">part-goblin</option>
+                            <option value="part-human">part-human</option>
+                            <option value="phoenix">phoenix</option>
+                            <option value="poltergeist">poltergeist</option>
+                            <option value="portrait">portrait</option>
+                            <option value="scops owl">scops owl</option>
+                            <option value="Snowy Owl">Snowy Owl</option>
+                            <option value="three-headed dog">three-headed dog</option>
+                            <option value="toad">toad</option>
+                            <option value="werewolf">werewolf</option>
+                            <option value="">unknown</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Animagus</EditLabel></td>
+                    <td>
+                        <select id="animagus" name="animagus" value={animagus} onChange={handleChangeAnimagus}>
+                            <option value="beetle">beetle</option>
+                            <option value="black dog">black dog</option>
+                            <option value="rat">rat</option>
+                            <option value="stag">stag</option>
+                            <option value="tabby cat">tabby cat</option>
+                            <option value="">none</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><EditLabel>School</EditLabel></td>
+                    <td>
+                        <select id="school" name="school" value={school} onChange={handleChangeSchool}>
+                            <option value="Beauxbatons Academy of Magic">Beauxbatons Academy of Magic</option>
+                            <option value="Durmstrang Institute">Durmstrang Institute</option>
+                            <option value="Hogwarts Academy of Witchcraft and Wizardry">Hogwarts Academy of Witchcraft and Wizardry</option>
+                            <option value="Hogwarts School of Witchcraft and Wizardry">Hogwarts School of Witchcraft and Wizardry</option>
+                            <option value="">none</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Part of Dumbeldore's army</EditLabel></td>
+                    <td><input type="checkbox" id="dumbledoresArmy" name="dumbledoresArmy" checked={dumbledoresArmy} onChange={handleChangeDumbledor}></input></td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Death Eater</EditLabel></td>
+                    <td><input type="checkbox" id="deathEater" name="deathEater" checked={deathEater} onChange={handleChangeDeathEater}></input></td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Part of Order of the Phoenix</EditLabel></td>
+                    <td><input type="checkbox" id="orderOfThePhoenix" name="orderOfThePhoenix" checked={orderOfThePhoenix} onChange={handleChangePhoenix}></input></td>
+                </tr>
+                <tr>
+                    <td><EditLabel>Part of the Ministry of Magic</EditLabel></td>
+                    <td><input type="checkbox" id="ministryOfMagic" name="ministryOfMagic" checked={ministryOfMagic} onChange={handleChangeMinistry}></input></td>
+                </tr>
+                </tbody>
+                </table>
                 <button type="submit">SUBMIT</button>
             </form>
-        </Content>
+        </DetailsDiv>
     )
 } else {
     return (
-        <Content>
+        <DetailsDiv>
 
-        </Content>
+        </DetailsDiv>
     )
 }
 }
